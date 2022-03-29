@@ -14,12 +14,15 @@ public class timerScript : MonoBehaviour
 
     public Text countText;
     public Text startText;
+    public Text gameEndText;
 
     void Start()
     {
 
         timerIsRunning = true;
         startText.enabled = false;
+        gameEndText.enabled = false;
+
 
     }
 
@@ -37,6 +40,10 @@ public class timerScript : MonoBehaviour
         {
             timeRemaining = 0;
             timerIsRunning = false;
+            //let player know fish died, game is over
+            Debug.Log("time over");
+            gameEndText.enabled = true;
+
         }
     }
 

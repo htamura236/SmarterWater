@@ -6,6 +6,8 @@ TagManager:
   tags:
   - canvas
   - start
+  - timeRecovery
+  - goal
   layers:
   - Default
   - TransparentFX
