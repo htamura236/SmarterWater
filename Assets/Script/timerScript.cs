@@ -1,82 +1,74 @@
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class timerScript : MonoBehaviour
 {
-    //for timer
-    public float targetTime = 60.0f;
+
+    //Reference: https://gamedevbeginner.com/how-to-make-countdown-timer-in-unity-minutes-seconds/
+   
+    public float timeRemaining = 10;
+    public bool timerIsRunning = false;
+    public float seconds, minutes;
+
     public Text countText;
-    private int count;
+    public Text startText;
 
-    public bool TimerOn;
-
-    //for win/lose screen
-    public Text endText;
- 
     void Start()
     {
-        //hide endText at the bigining
 
-        TimerOn = false;
-        //this is not working now
+        timerIsRunning = true;
+        startText.enabled = false;
+
     }
 
     void Update()
     {
-        if(TimerOn = true)
+        if (timerIsRunning)
         {
-            setTimer();
+            if (timeRemaining >0)
+            {
+                timeRemaining -= Time.deltaTime;
+                displayTime(timeRemaining);
+            }
+        }
+        else
+        {
+            timeRemaining = 0;
+            timerIsRunning = false;
         }
     }
+
     void OnTriggerEnter(Collider other)
     {
-        //collide with object tagged "start"
         if (other.gameObject.CompareTag("start"))
         {
-            //activate timer and start countdown.
-            TimerOn = true;
-        }
-
-        //fish gets some items
-        if (other.gameObject.CompareTag("timeRecovery"))
-        {
-            //add some seconds to the timer.
-            //hide the object
+            Debug.Log("collided start object");
             other.gameObject.SetActive(false);
+
+            startText.enabled = true;
+            startText.text = "Game Start!";
         }
 
-        //collide with object tagged "goal"
         if (other.gameObject.CompareTag("goal"))
         {
-            TimerOn = false;
-            endText.text = "You Win!!";
+            Debug.Log("collided goal object");
+
         }
     }
+
     void setTimer()
     {
-        targetTime -= Time.deltaTime;
-        SetCountText();
-
-        if (targetTime <= 0.0f)
-        {
-            timerEnd();
-        }
+        timeRemaining -= Time.deltaTime;
+        displayTime(timeRemaining);
     }
 
-    void timerEnd()
+    void displayTime(float timeToDisplay)
     {
-        //fish dies, game over
-        //game over text
-        endText.text = "You Lost!";
-        //replay, back to title buttons
-        //make fish uncontrollable
+        timeToDisplay += 1;
+        float minutes = Mathf.FloorToInt(timeToDisplay / 60);
+        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
+        countText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
-
-    void SetCountText()
-    {
-
-        countText.text = "Time: " + count.ToString();
-    }
-
 }
