@@ -1322,9 +1322,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8cbf6d90efadb24bba8102c88a71fbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 10
+  TimerOn: 0
+  timeRemaining: 100
   timerIsRunning: 0
-  seconds: 10
+  seconds: 40
   minutes: 1
   countText: {fileID: 1927726714}
   startText: {fileID: 524810364}

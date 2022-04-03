@@ -7,9 +7,12 @@ public class timerScript : MonoBehaviour
 {
 
     //Reference: https://gamedevbeginner.com/how-to-make-countdown-timer-in-unity-minutes-seconds/
-   
+
+  
+    public bool TimerOn;
     public float timeRemaining = 10;
     public bool timerIsRunning = false;
+
     public float seconds, minutes;
 
     public Text countText;
@@ -18,34 +21,21 @@ public class timerScript : MonoBehaviour
 
     void Start()
     {
-
-        timerIsRunning = true;
+        countText.text = string.Format("{0:00}:{0:40}", minutes, seconds);
+        TimerOn = false;
+        timerIsRunning = false;
+        //text
         startText.enabled = false;
         gameEndText.enabled = false;
-
 
     }
 
     void Update()
     {
-        if (timerIsRunning)
-        {
-            if (timeRemaining >0)
-            {
-                timeRemaining -= Time.deltaTime;
-                displayTime(timeRemaining);
-            }
-        }
-        else
-        {
-            timeRemaining = 0;
-            timerIsRunning = false;
-            //let player know fish died, game is over
-            Debug.Log("time over");
-            gameEndText.enabled = true;
-
-        }
+        
+        timerFunction();
     }
+
 
     void OnTriggerEnter(Collider other)
     {
@@ -56,11 +46,18 @@ public class timerScript : MonoBehaviour
 
             startText.enabled = true;
             startText.text = "Game Start!";
+            //timer on
+            TimerOn = true;
+            timerIsRunning = true;
         }
 
         if (other.gameObject.CompareTag("goal"))
         {
             Debug.Log("collided goal object");
+            other.gameObject.SetActive(false);
+
+            startText.enabled = true;
+            startText.text = "Game Start!";
 
         }
     }
@@ -77,5 +74,29 @@ public class timerScript : MonoBehaviour
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
         countText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    void timerFunction()
+    {
+        if (TimerOn = true)
+        { 
+            if (timerIsRunning)
+            { 
+                if (timeRemaining > 0)
+                {
+                    timeRemaining -= Time.deltaTime;
+                    displayTime(timeRemaining);
+                }
+            }
+        }
+        else
+        {
+            timeRemaining = 0;
+            timerIsRunning = false;
+            //let player know fish died, game is over
+            Debug.Log("time over");
+            gameEndText.enabled = true;
+
+        }
     }
 }
