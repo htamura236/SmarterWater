@@ -56,8 +56,10 @@ public class timerScript : MonoBehaviour
             Debug.Log("collided goal object");
             other.gameObject.SetActive(false);
 
-            startText.enabled = true;
-            startText.text = "Game Start!";
+            gameEndText.enabled = true;
+            gameEndText.text = "You Win!";
+            TimerOn = false;
+            timerIsRunning = false;
 
         }
     }
@@ -93,9 +95,9 @@ public class timerScript : MonoBehaviour
         {
             timeRemaining = 0;
             timerIsRunning = false;
-            //let player know fish died, game is over
-            Debug.Log("time over");
-            gameEndText.enabled = true;
+            //let player know fish died, game is over, but the codes below doesn't work now
+            //Debug.Log("time over");
+            //gameEndText.enabled = true;
 
         }
     }
