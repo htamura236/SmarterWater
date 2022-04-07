@@ -8,6 +8,7 @@ TagManager:
   - start
   - timeRecovery
   - goal
+  - ground
   layers:
   - Default
   - TransparentFX

@@ -8,6 +8,8 @@ using UnityEngine;
  * Player can hover if spamming / holding down the space bar, need jump delay? The raycast is reading it as isGrounded while the fish is still in the air
  * 
  * If placeholderFish (player character) flips over after landing, the jump won't work.
+ * 
+ * The WASD controls are not consistent, seems like you have to hold the space bar down to get them to work
 
 
 */
@@ -16,18 +18,33 @@ public class fishJumpControls : MonoBehaviour
 {
 
 
-    //jump:
+    //jump
+    [Header ("Jump Physics:")]
+
     public float Distance = 5;
     private Rigidbody rigid_body;
     public int JumpForce = 100;
-    public bool isGrounded;
+    //public bool isGrounded;
 
+    // Jump Charge
+    private bool onGround;
+    private float jumpPressure;
+    private float minJump;
+    private float maxJumpPressure;
+    private Rigidbody rbody;
+        
 
     //start is called before the first update
     void Start()
     {
         rigid_body = GetComponent<Rigidbody>();
 
+        //Jump Charge
+        rbody = GetComponent<Rigidbody>();
+        onGround = true;
+        jumpPressure = 0f;
+        minJump = 2f;
+        maxJumpPressure = 10f;
        
        
     }
@@ -35,62 +52,94 @@ public class fishJumpControls : MonoBehaviour
     //Update is called once per frame
     private void Update()
     {
-        RaycastHit hit;
-
-     if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 1.5f))
+  
+     if (onGround == true)
      {
-         print("can't move");
-         isGrounded = true;
-         //disables WASD controls
+         print("Touching Ground: Disables WASD");
+        
          GameObject.Find("placeholderFish").GetComponent<playerControl>().enabled = false;
      }
      else
      {
-         print("noGround");
-         isGrounded = false;
-     }
+            
+            GameObject.Find("placeholderFish").GetComponent<playerControl>().enabled = true;
+        }
+
+     
+        
+
+     //Jump Charge
+     if (onGround)
+        {
+            //if holding jump button
+            if(Input.GetButton("Jump"))
+            {
+                if(jumpPressure < maxJumpPressure)
+                {
+                    jumpPressure += Time.deltaTime * 10f;
+                }
+                else
+                {
+                    jumpPressure = maxJumpPressure;
+                }     
+            }
+            //not holding jump button
+            else
+            {
+                //jump
+                if(jumpPressure > 0f)
+                {
+                    jumpPressure = jumpPressure + minJump;
+                    rbody.velocity = new Vector3(0f, jumpPressure, 0f);
+                    jumpPressure = 0f;
+                    onGround = false;
+                }
+            }
+            
+        }
+
+       
+
+
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if(other.gameObject.CompareTag("ground"))
+        {
+            onGround = true;
+        }
+    }
+
+
+    private void FixedUpdate()
+    {
+
+    }
 
 
 
-
-
-
-
+    /*  OLD CODE BRAINSTORMS
+     *  
+     *  
+     *  
+     *  /*
      if (Input.GetKey("space"))
      {
          if (Input.GetKey("space") && isGrounded)
          {
-             print("Jump");
-             rigid_body.AddForce(Vector3.up * JumpForce);
-
-            //improves gravity?
+           
+            //improves gravity
              rigid_body.AddForce(new Vector3(0f, 1f, 0f));
 
              //enables WASD controls
              GameObject.Find("placeholderFish").GetComponent<playerControl>().enabled = true;
-
-            
          }
-
-     }
-
-     
-
-
-    }
-
-    private void FixedUpdate()
-    {
-        
-    }
-
-
-
-    /*  
-     *  ROUGH CODE IDEAS
+     }   
+     *  //  print("Jump");
+           //  rigid_body.AddForce(Vector3.up * JumpForce);
      *  
      *  RaycastHit hit;
-
       if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 1.5f))
       {
           print("can't move");
@@ -104,12 +153,6 @@ public class fishJumpControls : MonoBehaviour
           isGrounded = false;
       }
 
-
-
-
-
-
-
       if (Input.GetKey("space"))
       {
           if (Input.GetKey("space") && isGrounded)
@@ -119,64 +162,8 @@ public class fishJumpControls : MonoBehaviour
               //enables WASD controls
               GameObject.Find("placeholderFish").GetComponent<playerControl>().enabled = true;
           }
-
       }
-
       */
-
-
-
-    /* 
-     * BRAINSTORMING CODE
-     * 
-     * if (Input.GetKey("w"))
-        {
-            transform.position = transform.position + Camera.main.transform.forward * Distance * Time.deltaTime;
-        }
-        if (Input.GetKey("a"))
-        {
-            transform.position = transform.position - Camera.main.transform.forward * Distance * Time.deltaTime;
-        }
-        if (Input.GetKey("s"))
-        {
-            transform.position = transform.position - Camera.main.transform.forward * Distance * Time.deltaTime;
-        }
-        if (Input.GetKey("d"))
-        {
-            transform.position = transform.position + Camera.main.transform.forward * Distance * Time.deltaTime;
-        }
-
-
-
-        if (isGrounded == true)
-       {
-           print("can't move");
-           GameObject.Find("placeholderFish").GetComponent<playerControl>().enabled = false;
-       }
-        */
-
-    /*  public int maxJumps;
-    public float jumpForce;
-    public float maxButtonHoldTime;
-    public float holdForce;
-    public float distanceToCollider;
-    public float maxJumpSpeed;
-    public float maxFallSpeed;
-
-    //used to make gravity less floaty
-    public float fallSpeed;
-    //used to adjust how quickly the player falls after jumping (makes it less floaty)
-    public float gravityMultiplyer;
-
-    public LayerMask collisionLayer;
-
-    private bool jumpPressed;
-    private bool jumpHeld;
-    private float buttonHoldTime;
-    private float originalGravity;
-    private int numberOfJumpsLeft;
-    */
-
     /*
       if (Input.GetKeyDown(KeyCode.Space))
        {
@@ -191,7 +178,6 @@ public class fishJumpControls : MonoBehaviour
            GroundCheck();
        }
        */
-
     /*
    private void CheckForJump()
    {
@@ -212,5 +198,30 @@ public class fishJumpControls : MonoBehaviour
            }
        }
    }
-   */
+   /* 
+     * 
+     * 
+     * if (Input.GetKey("w"))
+        {
+            transform.position = transform.position + Camera.main.transform.forward * Distance * Time.deltaTime;
+        }
+        if (Input.GetKey("a"))
+        {
+            transform.position = transform.position - Camera.main.transform.forward * Distance * Time.deltaTime;
+        }
+        if (Input.GetKey("s"))
+        {
+            transform.position = transform.position - Camera.main.transform.forward * Distance * Time.deltaTime;
+        }
+        if (Input.GetKey("d"))
+        {
+            transform.position = transform.position + Camera.main.transform.forward * Distance * Time.deltaTime;
+        }
+        if (isGrounded == true)
+       {
+           print("can't move");
+           GameObject.Find("placeholderFish").GetComponent<playerControl>().enabled = false;
+       }
+        */
+   
 }
