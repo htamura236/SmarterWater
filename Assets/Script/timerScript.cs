@@ -19,6 +19,9 @@ public class timerScript : MonoBehaviour
     public Text countText;
     public Text startText;
     public Text gameEndText;
+    //respawn
+    private Transform respawnPoint;
+
 
     void Start()
     {
@@ -30,7 +33,8 @@ public class timerScript : MonoBehaviour
         //messages are off at the start point
         startText.enabled = false;
         gameEndText.enabled = false;
-
+        //get the player's position for respawning in the first position
+        respawnPoint = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update()
@@ -95,6 +99,11 @@ public class timerScript : MonoBehaviour
                     timeRemaining -= Time.deltaTime;
                     displayTime(timeRemaining);
                 }
+                else if(timeRemaining <= 0)
+                {
+                    Debug.Log("time over");
+                    fishDie();
+                }
             }
         }
         else
@@ -113,7 +122,8 @@ public class timerScript : MonoBehaviour
     void fishDie()
     {
         //show message "time over"
-        //deactivate player's game object so that player know he is no longer able to play game
+        //hide player's game object so that player know he is no longer able to play game
+        //respawn to the first position 
         //show menu so that player can choose "restart, or "back to menu"
     }
 }
