@@ -55,7 +55,7 @@ public class fishJumpControls : MonoBehaviour
   
      if (onGround == true)
      {
-         print("Touching Ground: Disables WASD");
+         //print("Touching Ground: Disables WASD");
         
          GameObject.Find("placeholderFish").GetComponent<playerControl>().enabled = false;
      }
