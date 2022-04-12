@@ -992,8 +992,12 @@ PrefabInstance:
       value: placeholderFish
       objectReference: {fileID: 0}
     - target: {fileID: 279181359376207828, guid: 8b2e1f41ac27aee45bad47bfe44cdac2, type: 3}
+      propertyPath: Distance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 279181359376207828, guid: 8b2e1f41ac27aee45bad47bfe44cdac2, type: 3}
       propertyPath: JumpForce
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 279181359376207829, guid: 8b2e1f41ac27aee45bad47bfe44cdac2, type: 3}
       propertyPath: speed

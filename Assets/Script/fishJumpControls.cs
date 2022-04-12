@@ -23,7 +23,7 @@ public class fishJumpControls : MonoBehaviour
 
     public float Distance = 5;
     private Rigidbody rigid_body;
-    public int JumpForce = 100;
+    public float JumpForce = 100;
     //public bool isGrounded;
 
     // Jump Charge
@@ -90,7 +90,7 @@ public class fishJumpControls : MonoBehaviour
                 if(jumpPressure > 0f)
                 {
                     jumpPressure = jumpPressure + minJump;
-                    rbody.velocity = new Vector3(0f, jumpPressure, 0f);
+                    rbody.velocity = new Vector3(0f, jumpPressure * JumpForce, 0f);
                     jumpPressure = 0f;
                     onGround = false;
                 }
