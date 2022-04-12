@@ -21,6 +21,7 @@ public class timerScript : MonoBehaviour
     public Text gameEndText;
     //respawn
     private Transform respawnPoint;
+    private Transform playerPos;
 
 
     void Start()
@@ -34,7 +35,8 @@ public class timerScript : MonoBehaviour
         startText.enabled = false;
         gameEndText.enabled = false;
         //get the player's position for respawning in the first position
-        respawnPoint = GameObject.FindGameObjectWithTag("Player").transform;
+        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+        respawnPoint = GameObject.FindGameObjectWithTag("Respawn").transform;
     }
 
     void Update()
@@ -110,20 +112,19 @@ public class timerScript : MonoBehaviour
         {
             timeRemaining = 0;
             timerIsRunning = false;
-            //let player know fish died, game is over, but the codes below doesn't work now.
-            //actually the log "time over" doesn't appear even when count became 0.
-
-            Debug.Log("time over");
-            //gameEndText.enabled = true;
-            //gameObject.SetActive(false);
 
         }
     }
     void fishDie()
     {
         //show message "time over"
+        //gameEndText.enabled = true;
         //hide player's game object so that player know he is no longer able to play game
+        //gameObject.SetActive(false);
         //respawn to the first position 
+        playerPos.position = new Vector3(respawnPoint.position.x, respawnPoint.position.y, respawnPoint.position.z);
         //show menu so that player can choose "restart, or "back to menu"
+
+        timeRemaining = 120;
     }
 }
