@@ -72,6 +72,7 @@ public class timerScript : MonoBehaviour
             //timer off
             TimerOn = false;
             timerIsRunning = false;
+            //switch scene
 
         }
     }
