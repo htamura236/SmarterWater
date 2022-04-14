@@ -23,11 +23,16 @@ public class timerScript : MonoBehaviour
     private Transform respawnPoint;
     private Transform playerPos;
 
+    //colectables to be reset on death
+    [SerializeField]
+    private GameObject collectables;
+    private GameObject collectablesCopy;
+
 
     void Start()
     {
         //timer's format. you need to change "40" according to the time you set
-        countText.text = string.Format("{0:00}:{0:40}", minutes, seconds);
+        countText.text = string.Format("{1:00}:{0:31}", minutes, seconds);
         //timer is off at the start point
         TimerOn = false;
         timerIsRunning = false;
@@ -37,6 +42,11 @@ public class timerScript : MonoBehaviour
         //get the player's position for respawning in the first position
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         respawnPoint = GameObject.FindGameObjectWithTag("Respawn").transform;
+
+        //find and sets collectable object
+        collectables = GameObject.FindGameObjectWithTag("Collectables");
+        collectablesCopy = Instantiate(collectables, collectables.transform.position, collectables.transform.rotation);
+        collectablesCopy.SetActive(false);
     }
 
     void Update()
@@ -137,6 +147,13 @@ public class timerScript : MonoBehaviour
         playerPos.position = new Vector3(respawnPoint.position.x, respawnPoint.position.y, respawnPoint.position.z);
         //show menu so that player can choose "restart, or "back to menu"
 
-        timeRemaining = 120;
+        timeRemaining = 33;
+
+       //collectables managment
+
+        Destroy(collectables);
+        collectablesCopy.SetActive(true);
+        collectables = Instantiate(collectablesCopy, collectablesCopy.transform.position, collectablesCopy.transform.rotation); ;
+        collectablesCopy.SetActive(false);
     }
 }

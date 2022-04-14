@@ -10,6 +10,7 @@ TagManager:
   - goal
   - ground
   - Bottle
+  - Collectables
   layers:
   - Default
   - TransparentFX
