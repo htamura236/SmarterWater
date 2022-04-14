@@ -74,7 +74,11 @@ public class fishJumpControls : MonoBehaviour
             //if holding jump button
             if(Input.GetButton("Jump"))
             {
-                if(jumpPressure < maxJumpPressure)
+                //charge bar goes up
+                GameObject.Find("jumpChargeVisual").GetComponent<jumpChargeVisual>().isCharging = true;
+
+
+                if (jumpPressure < maxJumpPressure)
                 {
                     jumpPressure += Time.deltaTime * 10f;
                 }
@@ -86,8 +90,12 @@ public class fishJumpControls : MonoBehaviour
             //not holding jump button
             else
             {
+                //charge bar goes down
+                GameObject.Find("jumpChargeVisual").GetComponent<jumpChargeVisual>().isCharging = false;
+
+
                 //jump
-                if(jumpPressure > 0f)
+                if (jumpPressure > 0f)
                 {
                     jumpPressure = jumpPressure + minJump;
                     rbody.velocity = new Vector3(0f, jumpPressure * JumpForce, 0f);
