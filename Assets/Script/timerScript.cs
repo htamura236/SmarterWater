@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class timerScript : MonoBehaviour
 {
@@ -83,6 +84,7 @@ public class timerScript : MonoBehaviour
             TimerOn = false;
             timerIsRunning = false;
             //switch scene
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
         }
 
@@ -144,7 +146,9 @@ public class timerScript : MonoBehaviour
         //hide player's game object so that player know he is no longer able to play game
         //gameObject.SetActive(false);
         //respawn to the first position 
-        playerPos.position = new Vector3(respawnPoint.position.x, respawnPoint.position.y, respawnPoint.position.z);
+        //playerPos.position = new Vector3(respawnPoint.position.x, respawnPoint.position.y, respawnPoint.position.z);
+        SceneManager.LoadScene(0);
+
         //show menu so that player can choose "restart, or "back to menu"
 
         timeRemaining = 33;

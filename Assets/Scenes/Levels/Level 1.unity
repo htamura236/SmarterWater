@@ -1813,7 +1813,7 @@ PrefabInstance:
       objectReference: {fileID: 6354380381842966096}
     - target: {fileID: 794906506, guid: 8b2e1f41ac27aee45bad47bfe44cdac2, type: 3}
       propertyPath: timeRemaining
-      value: 30
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 279181359376207826, guid: 8b2e1f41ac27aee45bad47bfe44cdac2, type: 3}
       propertyPath: m_Name
@@ -5617,6 +5617,14 @@ PrefabInstance:
     - target: {fileID: 5407712195576508922, guid: 1d5a858366b4e1549a7aee3e58856831, type: 3}
       propertyPath: m_Name
       value: Tank
+      objectReference: {fileID: 0}
+    - target: {fileID: 5407712195935613357, guid: 1d5a858366b4e1549a7aee3e58856831, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5407712195935613358, guid: 1d5a858366b4e1549a7aee3e58856831, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d5a858366b4e1549a7aee3e58856831, type: 3}
