@@ -75,8 +75,8 @@ public class fishJumpControls : MonoBehaviour
             if(Input.GetButton("Jump"))
             {
                 //charge bar goes up
-               // GameObject.Find("jumpChargeVisual").GetComponent<jumpChargeVisual>().isCharging = true;
-
+                // GameObject.Find("jumpChargeVisual").GetComponent<jumpChargeVisual>().isCharging = true;
+                // GameObject.FindGameObjectWithTag("taghere");
 
                 if (jumpPressure < maxJumpPressure)
                 {
@@ -91,7 +91,7 @@ public class fishJumpControls : MonoBehaviour
             else
             {
                 //charge bar goes down
-               // GameObject.Find("jumpChargeVisual").GetComponent<jumpChargeVisual>().isCharging = false;
+                //GameObject.Find("jumpChargeVisual").GetComponent<jumpChargeVisual>().isCharging = false;
 
 
                 //jump
