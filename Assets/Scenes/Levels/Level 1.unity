@@ -1813,7 +1813,7 @@ PrefabInstance:
       objectReference: {fileID: 6354380381842966096}
     - target: {fileID: 794906506, guid: 8b2e1f41ac27aee45bad47bfe44cdac2, type: 3}
       propertyPath: timeRemaining
-      value: 100
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 279181359376207826, guid: 8b2e1f41ac27aee45bad47bfe44cdac2, type: 3}
       propertyPath: m_Name
