@@ -84,8 +84,8 @@ public class timerScript : MonoBehaviour
             {
                 timeRemaining += bottle.secondsAdded;
             }
+            Destroy(other.gameObject);
         }
-        Destroy(other.gameObject);
     }
 
     void setTimer()
