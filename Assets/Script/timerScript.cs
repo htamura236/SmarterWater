@@ -75,6 +75,17 @@ public class timerScript : MonoBehaviour
             //switch scene
 
         }
+
+        // for water bottle collectible
+        if(other.gameObject.tag == "Bottle")
+        {
+            BottleCollectable bottle = other.gameObject.GetComponent<BottleCollectable>();
+            if(bottle != null)
+            {
+                timeRemaining += bottle.secondsAdded;
+            }
+        }
+        Destroy(other.gameObject);
     }
 
     void setTimer()

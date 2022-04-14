@@ -9,6 +9,7 @@ TagManager:
   - timeRecovery
   - goal
   - ground
+  - Bottle
   layers:
   - Default
   - TransparentFX
