@@ -21,7 +21,11 @@ EditorUserSettings:
       value: 22424703114646680e0b0227036c791904040c1938292135633c133af6f9
       flags: 0
     RecentlyUsedScenePath-5:
+<<<<<<< HEAD
       value: 22424703114646680e0b0227036c7315001214396304232628255d61acf53a31f6fe
+=======
+      value: 22424703114646680e0b0227036c7315001214396304232628255d60acf53a31f6fe
+>>>>>>> parent of b1ac9ec (reorganized the prefabs a little)
       flags: 0
     RecentlyUsedScenePath-6:
       value: 22424703114646680e0b0227036c7315001214396304232628255d62acf53a31f6fe
