@@ -157,7 +157,7 @@ public class timerScript : MonoBehaviour
 
         Destroy(collectables);
         collectablesCopy.SetActive(true);
-        collectables = Instantiate(collectablesCopy, collectablesCopy.transform.position, collectablesCopy.transform.rotation); ;
+        collectables = Instantiate(collectablesCopy, collectablesCopy.transform.position, collectablesCopy.transform.rotation); 
         collectablesCopy.SetActive(false);
     }
 }
