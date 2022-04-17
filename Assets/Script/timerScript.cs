@@ -84,7 +84,11 @@ public class timerScript : MonoBehaviour
             TimerOn = false;
             timerIsRunning = false;
             //switch scene
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            DontDestroyOnLoad(GameObject.FindGameObjectWithTag("GameController"));
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            SceneManager.LoadScene(0);
 
         }
 
