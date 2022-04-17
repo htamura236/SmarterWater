@@ -8,6 +8,10 @@ public class SceneSwitch : MonoBehaviour
     public void LoadScene(int sceneNum)
     {
         DontDestroyOnLoad(GameObject.FindGameObjectWithTag("GameController"));
+        GameController.levelNumber = sceneNum;
+        GameController.bottlesCollected = 0;
+        GameController.secondsRemaining = 0;
+        GameController.Trophypickedup = false;
         SceneManager.LoadScene(sceneNum);
     } 
 

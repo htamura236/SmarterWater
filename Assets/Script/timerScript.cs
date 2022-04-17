@@ -54,6 +54,8 @@ public class timerScript : MonoBehaviour
     {
         
         timerFunction();
+        //tracking for score
+        GameController.secondsRemaining = timeRemaining;
     }
 
 
@@ -85,11 +87,23 @@ public class timerScript : MonoBehaviour
             timerIsRunning = false;
             //switch scene
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+            //game manager and scene switch stuff - vivian
             DontDestroyOnLoad(GameObject.FindGameObjectWithTag("GameController"));
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
-            SceneManager.LoadScene(0);
+            // value updates
+            if(SceneManager.GetActiveScene().buildIndex > GameController.levelsComplete)
+            {
+                GameController.levelsComplete = SceneManager.GetActiveScene().buildIndex;
+            }
 
+            GameObject gameController = GameObject.FindGameObjectWithTag("GameController");
+            if (gameController != null)
+            {
+                GameController.score = gameController.GetComponent<GameController>().ScoreEquation(GameController.secondsRemaining, GameController.bottlesCollected, GameController.Trophypickedup);
+            }
+            SceneManager.LoadScene(0);
         }
 
         // for water bottle collectible
@@ -100,6 +114,13 @@ public class timerScript : MonoBehaviour
             {
                 timeRemaining += bottle.secondsAdded;
             }
+            GameController.bottlesCollected++;
+            Destroy(other.gameObject);
+        }
+
+        if(other.gameObject.tag == "Trophy")
+        {
+            GameController.Trophypickedup = true;
             Destroy(other.gameObject);
         }
     }
@@ -163,5 +184,10 @@ public class timerScript : MonoBehaviour
         collectablesCopy.SetActive(true);
         collectables = Instantiate(collectablesCopy, collectablesCopy.transform.position, collectablesCopy.transform.rotation); 
         collectablesCopy.SetActive(false);
+
+        GameController.Trophypickedup = false;
+        //resets mouse so menu is workable
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 }

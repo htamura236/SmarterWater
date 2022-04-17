@@ -11,6 +11,7 @@ TagManager:
   - ground
   - Bottle
   - Collectables
+  - Trophy
   layers:
   - Default
   - TransparentFX
