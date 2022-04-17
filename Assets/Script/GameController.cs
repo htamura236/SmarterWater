@@ -28,6 +28,11 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private float tropyPointMultiplyer;
 
+    [Header("Trophy Tracking")]
+    static public bool TrophyL1;
+    static public bool TrophyL2;
+    static public bool TrophyL3;
+
     [Header("test display")]
     public int lvcompletetest;
     public float secondsRemainingTest;

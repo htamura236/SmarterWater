@@ -1712,7 +1712,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &446295349
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2710,7 +2710,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &737637371
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3474,6 +3474,7 @@ MonoBehaviour:
   bottlesCollectedTest: 0
   TrophypickedupTest: 0
   levelNumberTest: 0
+  scoretest: 0
 --- !u!4 &984397942
 Transform:
   m_ObjectHideFlags: 0
@@ -3967,7 +3968,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1304702453
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5992,6 +5993,10 @@ MonoBehaviour:
   highScoreL1: {fileID: 1636459797}
   highScoreL2: {fileID: 1705625897}
   highScoreL3: {fileID: 1779116262}
+  trophyIcons:
+  - {fileID: 1304702454}
+  - {fileID: 737637372}
+  - {fileID: 446295350}
 --- !u!4 &2111476876
 Transform:
   m_ObjectHideFlags: 0
