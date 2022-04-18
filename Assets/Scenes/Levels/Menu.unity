@@ -1299,7 +1299,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 926653293}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.07672155, y: 0.178}
   m_AnchorMax: {x: 0.25822762, y: 0.915686}
@@ -3460,8 +3460,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 980795214}
   - {fileID: 264721018}
+  - {fileID: 980795214}
   m_Father: {fileID: 339336197}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3603,7 +3603,7 @@ GameObject:
   - component: {fileID: 980795216}
   - component: {fileID: 980795215}
   m_Layer: 5
-  m_Name: Text
+  m_Name: LV2 Required Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3616,17 +3616,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980795213}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 926653293}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.33883536, y: 0.178}
-  m_AnchorMax: {x: 0.9617216, y: 0.88600004}
-  m_AnchoredPosition: {x: -9.688599, y: 0.8215008}
-  m_SizeDelta: {x: 19.7176, y: -1.1121}
+  m_AnchorMin: {x: 0.23500001, y: 0.178}
+  m_AnchorMax: {x: 0.9762698, y: 0.915686}
+  m_AnchoredPosition: {x: 0.057899475, y: -0.21000099}
+  m_SizeDelta: {x: 1.4127998, y: 2.088}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &980795215
 MonoBehaviour:
@@ -3702,12 +3702,6 @@ MonoBehaviour:
   SecondstoPointsRatio: 5
   bottlestoPointsRatio: 50
   tropyPointMultiplyer: 2
-  lvcompletetest: 0
-  secondsRemainingTest: 0
-  bottlesCollectedTest: 0
-  TrophypickedupTest: 0
-  levelNumberTest: 0
-  scoretest: 0
 --- !u!4 &984397942
 Transform:
   m_ObjectHideFlags: 0
@@ -3976,7 +3970,7 @@ GameObject:
   - component: {fileID: 1251852278}
   - component: {fileID: 1251852277}
   m_Layer: 5
-  m_Name: Text
+  m_Name: LV3 Required Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3989,17 +3983,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251852275}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1518031636}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.33883536, y: 0.178}
-  m_AnchorMax: {x: 0.9617216, y: 0.88600004}
-  m_AnchoredPosition: {x: -9.688599, y: 0.8214989}
-  m_SizeDelta: {x: 19.7176, y: -1.1121}
+  m_AnchorMin: {x: 0.24439214, y: 0.178}
+  m_AnchorMax: {x: 0.97800004, y: 0.915686}
+  m_AnchoredPosition: {x: -0.07209778, y: 0.0006713867}
+  m_SizeDelta: {x: 2.9342, y: 1.6525}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1251852277
 MonoBehaviour:
@@ -5078,8 +5072,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1251852276}
   - {fileID: 1583973347}
+  - {fileID: 1251852276}
   m_Father: {fileID: 339336197}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5427,7 +5421,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1518031636}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.07672155, y: 0.178}
   m_AnchorMax: {x: 0.25822762, y: 0.915686}
@@ -5715,9 +5709,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: escMenu, Assembly-CSharp
-        m_MethodName: QuitGame
+      - m_Target: {fileID: 2100494592}
+        m_TargetAssemblyTypeName: SceneSwitch, Assembly-CSharp
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6456,17 +6450,17 @@ MonoBehaviour:
   - {fileID: 876990959}
   - {fileID: 35586692}
   - {fileID: 1256226705}
-  ThreshHoldsLv1: 0a0000000f00000014000000
+  ThreshHoldsLv1: f4010000e8030000d0070000
   MedalIconsLv2:
   - {fileID: 869968371}
   - {fileID: 397840765}
   - {fileID: 616268317}
-  ThreshHoldsLv2: 14000000190000001e000000
+  ThreshHoldsLv2: 9001000020030000d0070000
   MedalIconsLv3:
   - {fileID: 315458806}
   - {fileID: 634050734}
   - {fileID: 680089698}
-  ThreshHoldsLv3: 1e0000002300000028000000
+  ThreshHoldsLv3: 58020000e8030000ca080000
   Level1:
   - {fileID: 719655675}
   - {fileID: 103555551}
