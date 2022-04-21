@@ -5,10 +5,11 @@ using UnityEngine;
 
 /* FOUND BUGS: 
  * 
+ * Player can hover if spamming / holding down the space bar, need jump delay? The raycast is reading it as isGrounded while the fish is still in the air
  * 
  * If placeholderFish (player character) flips over after landing, the jump won't work.
  * 
-
+ * The WASD controls are not consistent, seems like you have to hold the space bar down to get them to work
 
 
 */
@@ -18,23 +19,20 @@ public class fishJumpControls : MonoBehaviour
 
 
     //jump
-    [Header("Jump Force needs to be changed in fishRandomMovement script too")]
-    public float JumpForce = 100;
+    [Header ("Jump Physics:")]
+
     public float Distance = 5;
     private Rigidbody rigid_body;
+    public float JumpForce = 100;
+    //public bool isGrounded;
 
-   
     // Jump Charge
-    public bool onGround;
+    private bool onGround;
     private float jumpPressure;
     private float minJump;
     private float maxJumpPressure;
     private Rigidbody rbody;
-
-
-    //Checks for player jump before executing random movement
-    public float jumpCheck;
-
+        
 
     //start is called before the first update
     void Start()
@@ -47,45 +45,39 @@ public class fishJumpControls : MonoBehaviour
         jumpPressure = 0f;
         minJump = 2f;
         maxJumpPressure = 10f;
-
+       
+       
     }
 
     //Update is called once per frame
     private void Update()
     {
-        
-
-        if (onGround == true)
+  
+     if (onGround == true)
      {
-         //Disables WASD;
+         //print("Touching Ground: Disables WASD");
         
          GameObject.Find("placeholderFish").GetComponent<playerControl>().enabled = false;
      }
      else
      {
-            //Enables WASD
+            
             GameObject.Find("placeholderFish").GetComponent<playerControl>().enabled = true;
-
         }
 
+     
+        
+
      //Jump Charge
-     if (onGround == true)
+     if (onGround)
         {
-            //check's for player jump: if the player isn't holding space, execute random movement
-            jumpCheck = 1;
-           
             //if holding jump button
-            if (Input.GetButton("Jump"))
+            if(Input.GetButton("Jump"))
             {
-                //check's for player jump: if the player is holding space, pause random movement
-                jumpCheck = 0;
-
-                //stops the random movement while the player holds space
-                GameObject.Find("placeholderFish").GetComponent<fishRandomMovement>().enabled = false;
-
-                //Jump charge bar visual goes up
+                //charge bar goes up
                 GameObject.Find("jumpChargeVisual").GetComponent<jumpChargeVisual>().isCharging = true;
-             
+                // GameObject.FindGameObjectWithTag("taghere");
+
                 if (jumpPressure < maxJumpPressure)
                 {
                     jumpPressure += Time.deltaTime * 10f;
@@ -93,9 +85,7 @@ public class fishJumpControls : MonoBehaviour
                 else
                 {
                     jumpPressure = maxJumpPressure;
-                    
-                }
-                
+                }     
             }
             //not holding jump button
             else
@@ -111,19 +101,15 @@ public class fishJumpControls : MonoBehaviour
                     rbody.velocity = new Vector3(0f, jumpPressure * JumpForce, 0f);
                     jumpPressure = 0f;
                     onGround = false;
-                    jumpCheck = 1;
                 }
-
-                //re-enables random movement once the player hits the ground
-                GameObject.Find("placeholderFish").GetComponent<fishRandomMovement>().enabled = true;
             }
-           
+            
         }
 
        
-    }
 
-   
+
+    }
 
     private void OnCollisionEnter(Collision other)
     {
@@ -136,7 +122,7 @@ public class fishJumpControls : MonoBehaviour
 
     private void FixedUpdate()
     {
-       
+
     }
 
 
