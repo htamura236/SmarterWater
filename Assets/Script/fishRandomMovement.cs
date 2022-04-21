@@ -45,10 +45,7 @@ public class fishRandomMovement : MonoBehaviour
             // makes the random movement script wait for the player's jump to finish before starting
            
         }
-        else
-        {
-            randomMovement = false;
-        }
+        
  
     }
 
@@ -64,7 +61,7 @@ public class fishRandomMovement : MonoBehaviour
         random_Z_Movement = Random.Range(1f, 3f);
 
         //time between each jump
-        int jumpWait = 1/2;
+        int jumpWait = 1/2; 
 
 
         randomDirection = Random.Range(1, 5);
@@ -109,7 +106,7 @@ public class fishRandomMovement : MonoBehaviour
     }
 
 
-
+    /*
    
     IEnumerator waitForJump()
     {
@@ -123,7 +120,8 @@ public class fishRandomMovement : MonoBehaviour
         randomMovement = true;
 
     }
-    
+    */
+
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("ground"))
