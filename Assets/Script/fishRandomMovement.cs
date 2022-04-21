@@ -33,21 +33,15 @@ public class fishRandomMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(checkForJump);
         //if touching the ground and randomMovement = true, start randomly moving
-        if (onGround == true && randomMovement == true)
+        if (onGround == true && randomMovement == true && checkForJump == 1)
         {            
             StartCoroutine(Move());
         }
-        if(Input.GetKeyDown("space"))
-        {           
-            StopCoroutine(Move());
-            // makes the random movement script wait for the player's jump to finish before starting
-           
-        }
         else
         {
-            randomMovement = false;
+            // makes the random movement script wait for the player's jump to finish before starting
+            StartCoroutine(waitForJump());
         }
  
     }
@@ -110,10 +104,10 @@ public class fishRandomMovement : MonoBehaviour
 
 
 
-   
+    
     IEnumerator waitForJump()
     {
-       
+        randomMovement = false;
 
         //makes the code wait until the player's jump has been executed before making randomMovement = true
         // when the player jumps, jumpCheck = 0
@@ -123,7 +117,7 @@ public class fishRandomMovement : MonoBehaviour
         randomMovement = true;
 
     }
-    
+
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("ground"))
