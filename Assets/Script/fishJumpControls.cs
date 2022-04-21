@@ -44,7 +44,7 @@ public class fishJumpControls : MonoBehaviour
         //Jump Charge
         rbody = GetComponent<Rigidbody>();
         onGround = true;
-       // jumpCheck = 1;
+        jumpCheck = 1;
         jumpPressure = 0f;
         minJump = 2f;
         maxJumpPressure = 10f;
@@ -73,7 +73,7 @@ public class fishJumpControls : MonoBehaviour
      if (onGround == true)
         {
             //check's for player jump: if the player isn't holding space, execute random movement
-          //  jumpCheck = 1;
+            jumpCheck = 1;
            
             //if holding jump button
             if (Input.GetButton("Jump"))
@@ -112,7 +112,7 @@ public class fishJumpControls : MonoBehaviour
                     rbody.velocity = new Vector3(0f, jumpPressure * JumpForce, 0f);
                     jumpPressure = 0f;
                     onGround = false;
-                   // jumpCheck = 1;
+                    jumpCheck = 1;
                 }
 
                 //re-enables random movement once the player hits the ground
