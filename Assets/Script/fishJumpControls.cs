@@ -44,6 +44,7 @@ public class fishJumpControls : MonoBehaviour
         //Jump Charge
         rbody = GetComponent<Rigidbody>();
         onGround = true;
+        jumpCheck = 1;
         jumpPressure = 0f;
         minJump = 2f;
         maxJumpPressure = 10f;
