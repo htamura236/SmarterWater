@@ -11,21 +11,14 @@ public class jumpChargeVisual : MonoBehaviour
     [SerializeField]
     private Image imagePowerUp;
 
-    public float JumpForce;
+
     public bool isCharging = false;
     private bool isDirectionUp = true;
     private float amtPower = 0.0f;
     public float barChargeSpeed = 100.0f;
     // Update is called once per frame
-
-    private void Start()
-    {
-        JumpForce = gameObject.GetComponent<fishJumpControls>().JumpForce;
-        
-    }
     void Update()
     {
-       // JumpForce = gameObject.GetComponent<fishJumpControls>().JumpForce; 
         if (isCharging)
         {
             PowerActive();
@@ -44,12 +37,12 @@ public class jumpChargeVisual : MonoBehaviour
         {
             amtPower = 100.0f;
         }
-        if (imagePowerUp.fillAmount > 0.22f)
+        if (imagePowerUp.fillAmount > 0.24f)
         {
-            imagePowerUp.fillAmount = 0.22f;
+            imagePowerUp.fillAmount = 0.24f;
         }
 
-        imagePowerUp.fillAmount = (0.49f - 0.22f) * amtPower / 100.0f + 0.22f;
+        imagePowerUp.fillAmount = (0.50f - 0.24f) * amtPower / 100.0f + 0.24f;
     }
 
     public void StartPowerUp()
