@@ -29,9 +29,4 @@ public class SceneSwitch : MonoBehaviour
             }
         }
     }
-
-    public void Quit()
-    {
-        Application.Quit();
-    }
 }

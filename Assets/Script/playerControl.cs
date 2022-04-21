@@ -9,13 +9,11 @@ public class playerControl : MonoBehaviour
     private float translation;
     private float straffe;
 
-
     // Use this for initialization
     void Start()
     {
         // turn off the cursor
         Cursor.lockState = CursorLockMode.Locked;
-
     }
 
     // Update is called once per frame
