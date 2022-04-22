@@ -139,15 +139,15 @@ public class ScoreUpdater : MonoBehaviour
         }
 
         //display of points required for diffrent medals
-        Level1[0].text = ThreshHoldsLv1[0] + " Points";
-        Level1[1].text = ThreshHoldsLv1[1] + " Points";
-        Level1[2].text = ThreshHoldsLv1[2] + " Points";
-        Level2[0].text = ThreshHoldsLv2[0] + " Points";
-        Level2[1].text = ThreshHoldsLv2[1] + " Points";
-        Level2[2].text = ThreshHoldsLv2[2] + " Points";
-        Level3[0].text = ThreshHoldsLv3[0] + " Points";
-        Level3[1].text = ThreshHoldsLv3[1] + " Points";
-        Level3[2].text = ThreshHoldsLv3[2] + " Points";
+        Level1[0].text = ThreshHoldsLv1[0] + " Pts";
+        Level1[1].text = ThreshHoldsLv1[1] + " Pts";
+        Level1[2].text = ThreshHoldsLv1[2] + " Pts";
+        Level2[0].text = ThreshHoldsLv2[0] + " Pts";
+        Level2[1].text = ThreshHoldsLv2[1] + " Pts";
+        Level2[2].text = ThreshHoldsLv2[2] + " Pts";
+        Level3[0].text = ThreshHoldsLv3[0] + " Pts";
+        Level3[1].text = ThreshHoldsLv3[1] + " Pts";
+        Level3[2].text = ThreshHoldsLv3[2] + " Pts";
         
         //lv 2 check
         if(GameController.highScores[0] < ThreshHoldsLv1[lv2Requirment])

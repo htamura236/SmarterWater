@@ -33,6 +33,7 @@ public class GameController : MonoBehaviour
     static public bool TrophyL2;
     static public bool TrophyL3;
 
+    /* used for testing
     [Header("test display")]
     public int lvcompletetest;
     public float secondsRemainingTest;
@@ -40,6 +41,7 @@ public class GameController : MonoBehaviour
     public bool TrophypickedupTest;
     public int levelNumberTest;
     public int scoretest;
+    */
 
 
 
@@ -68,13 +70,14 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /* used for testing
         lvcompletetest = levelsComplete;
         secondsRemainingTest = secondsRemaining;
         bottlesCollectedTest = bottlesCollected;
         TrophypickedupTest = Trophypickedup;
         levelNumberTest = levelNumber;
 
-        scoretest = score;
+        scoretest = score;*/
 
         
 }
