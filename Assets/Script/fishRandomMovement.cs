@@ -51,11 +51,12 @@ public class fishRandomMovement : MonoBehaviour
             // stop the random movement when the player holds space
 
         }
-        else if (Input.GetButton("Jump") == false && randomMovement == false && onGround == true)
+        if (Input.GetButton("Jump") == false && randomMovement == false && onGround == true)
         {
-           // randomMovement = true;
-           // StartCoroutine(Wait());
-            // StartCoroutine(Wait());
+           onGround = false;
+           randomMovement = true;
+           StartCoroutine(Wait());
+          
         }
 
     }
@@ -136,14 +137,26 @@ public class fishRandomMovement : MonoBehaviour
     IEnumerator Wait()
     {
        
-       yield return new WaitForSeconds(1);
+      
         if (onGround == true && randomMovement == true)
         {
-            StartCoroutine(Move());
+           yield return new WaitForSeconds(1);
+           StartCoroutine(backOn());
+           
+            
         }
            
         
         
+    }
+
+    IEnumerator backOn()
+    {
+        yield return new WaitForSeconds(1);
+        if (onGround == true && randomMovement == true)
+        {
+            StartCoroutine(Move());
+        }
     }
     private void OnCollisionEnter(Collision other)
     {
