@@ -81,9 +81,7 @@ public class fishJumpControls : MonoBehaviour
                 //check's for player jump: if the player is holding space, pause random movement
                 jumpCheck = 0;
 
-                //stops the random movement while the player holds space
-                GameObject.Find("placeholderFish").GetComponent<fishRandomMovement>().enabled = false;
-
+               
                 //Jump charge bar visual goes up
                 GameObject.Find("jumpChargeVisual").GetComponent<jumpChargeVisual>().isCharging = true;
              
@@ -115,8 +113,7 @@ public class fishJumpControls : MonoBehaviour
                    // jumpCheck = 1;
                 }
 
-                //re-enables random movement once the player hits the ground
-                GameObject.Find("placeholderFish").GetComponent<fishRandomMovement>().enabled = true;
+               
             }
            
         }

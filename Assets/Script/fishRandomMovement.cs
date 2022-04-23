@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class fishRandomMovement : MonoBehaviour
 {
+   // public bool inTheAir;
+
     public bool onGround;
     public float randomJumpForce = 50f;
     public float movementSpeed = 20f;
@@ -22,37 +24,46 @@ public class fishRandomMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //looks for the current value of jumpCheck 
-        checkForJump = GetComponent<fishJumpControls>().jumpCheck;
-
+       
         onGround = true;
         randomMovement = true;
+       // inTheAir = false;
         rbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        print(checkForJump);
+       
         //if touching the ground and randomMovement = true, start randomly moving
         if (onGround == true && randomMovement == true)
         {            
             StartCoroutine(Move());
+            
         }
-        if(Input.GetKeyDown("space"))
-        {           
+
+        if (Input.GetButton("Jump"))
+        {
             StopCoroutine(Move());
-            // makes the random movement script wait for the player's jump to finish before starting
-           
+            randomMovement = false;
+            onGround = true;
+            //inTheAir = false;
+            // stop the random movement when the player holds space
+
         }
-        
- 
+        else if (Input.GetButton("Jump") == false && randomMovement == false && onGround == true)
+        {
+           // randomMovement = true;
+           // StartCoroutine(Wait());
+            // StartCoroutine(Wait());
+        }
+
     }
 
     //Random movement
     IEnumerator Move()
     {
-        randomMovement = true;
+       
 
         //Chooses XYZ randomly 
         random_X_Movement = Random.Range(1f, 3f);
@@ -122,6 +133,18 @@ public class fishRandomMovement : MonoBehaviour
     }
     */
 
+    IEnumerator Wait()
+    {
+       
+       yield return new WaitForSeconds(1);
+        if (onGround == true && randomMovement == true)
+        {
+            StartCoroutine(Move());
+        }
+           
+        
+        
+    }
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("ground"))
