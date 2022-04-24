@@ -69,14 +69,15 @@ public class fishRandomMovement : MonoBehaviour
         //Chooses XYZ randomly 
         random_X_Movement = Random.Range(1f, 3f);
         JumpForce = Random.Range(2f, 5f);
-        jumpPressure = Random.Range(1f, 3f);
+        jumpPressure = Random.Range(2f, 4f);
         random_Z_Movement = Random.Range(1f, 3f);
 
         //time between each jump
-        int jumpWait = 1/2; 
+        int jumpWait = 1/2;
 
-
+        yield return new WaitForSeconds(1/2);
         randomDirection = Random.Range(1, 5);
+        yield return new WaitForSeconds(1 / 2);
         print(randomDirection);
 
         if(randomDirection == 1)
@@ -86,7 +87,7 @@ public class fishRandomMovement : MonoBehaviour
             rbody.velocity = new Vector3(random_X_Movement * random_X_Movement, jumpPressure * JumpForce, 0f);
             onGround = false;
 
-            yield return new WaitForSeconds(jumpWait);
+           yield return new WaitForSeconds(jumpWait);
         }
         if(randomDirection == 2)
         {
