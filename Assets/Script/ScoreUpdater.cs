@@ -78,15 +78,15 @@ public class ScoreUpdater : MonoBehaviour
 
         //trophy icon update
 
-        if(levelScore == 0 && GameController.Trophypickedup)
+        if(GameController.levelNumber - 1 == 0 && GameController.Trophypickedup)
         {
             GameController.TrophyL1 = true;
         }
-        if (levelScore == 1 && GameController.Trophypickedup)
+        if (GameController.levelNumber - 1 == 1 && GameController.Trophypickedup)
         {
             GameController.TrophyL2 = true;
         }
-        if (levelScore == 2 && GameController.Trophypickedup)
+        if (GameController.levelNumber - 1 == 2 && GameController.Trophypickedup)
         {
             GameController.TrophyL3 = true;
         }

@@ -749,7 +749,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2100494592}
         m_TargetAssemblyTypeName: SceneSwitch, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_MethodName: LoadSceneRefresh
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3250,7 +3250,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2100494592}
         m_TargetAssemblyTypeName: SceneSwitch, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_MethodName: LoadSceneRefresh
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3383,7 +3383,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2100494592}
         m_TargetAssemblyTypeName: SceneSwitch, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_MethodName: LoadSceneRefresh
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3699,9 +3699,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd2de6689f2d7714d8cc1b8115e845d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SecondstoPointsRatio: 5
-  bottlestoPointsRatio: 50
-  tropyPointMultiplyer: 2
+  timeRatio: 5
+  bottleRatio: 50
+  trophyMultiplyer: 2
+  lvcompletetest: 0
+  secondsRemainingTest: 0
+  bottlesCollectedTest: 0
+  TrophypickedupTest: 0
+  levelNumberTest: 0
+  scoretest: 0
 --- !u!4 &984397942
 Transform:
   m_ObjectHideFlags: 0
