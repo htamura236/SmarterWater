@@ -64,7 +64,7 @@ public class timerScript : MonoBehaviour
         if (other.gameObject.CompareTag("start"))
         {
             //when player touched "start" game object, timer starts count down.
-            Debug.Log("collided start object");
+            //Debug.Log("collided start object");
             other.gameObject.SetActive(false);
             //show player game starts
             startText.enabled = true;
@@ -77,8 +77,8 @@ public class timerScript : MonoBehaviour
         if (other.gameObject.CompareTag("goal"))
         {
             //when player touched "goal" game object, timer stop count down.
-            Debug.Log("collided goal object");
-            other.gameObject.SetActive(false);
+            //Debug.Log("collided goal object");
+            //other.gameObject.SetActive(false);
             //show a player game end
             gameEndText.enabled = true;
             gameEndText.text = "You Win!";
