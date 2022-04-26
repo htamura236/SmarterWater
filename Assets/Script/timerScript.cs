@@ -48,6 +48,9 @@ public class timerScript : MonoBehaviour
         collectables = GameObject.FindGameObjectWithTag("Collectables");
         collectablesCopy = Instantiate(collectables, collectables.transform.position, collectables.transform.rotation);
         collectablesCopy.SetActive(false);
+
+
+        GetComponent<fishRandomMovement>().enabled = false;
     }
 
     void Update()
@@ -72,6 +75,9 @@ public class timerScript : MonoBehaviour
             //timer on
             TimerOn = true;
             timerIsRunning = true;
+
+
+            GetComponent<fishRandomMovement>().enabled = true;
         }
 
         if (other.gameObject.CompareTag("goal"))
