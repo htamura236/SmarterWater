@@ -64,6 +64,9 @@ public class timerScript : MonoBehaviour
         collectablesCopy = Instantiate(collectables, collectables.transform.position, collectables.transform.rotation);
         collectablesCopy.SetActive(false);
 
+        //finds score screen canvas
+        scoreScreen = GameObject.FindGameObjectWithTag("ScoreScreen");
+        scoreScreen.SetActive(false);
 
         GetComponent<fishRandomMovement>().enabled = false;
         
