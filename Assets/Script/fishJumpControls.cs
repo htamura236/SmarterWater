@@ -31,6 +31,7 @@ public class fishJumpControls : MonoBehaviour
     private float maxJumpPressure;
     private Rigidbody rbody;
 
+    private float buttonHoldTime;
 
     //Checks for player jump before executing random movement
     public float jumpCheck;
@@ -49,52 +50,56 @@ public class fishJumpControls : MonoBehaviour
         minJump = 2f;
         maxJumpPressure = 10f;
 
+        buttonHoldTime = 0;
     }
 
     //Update is called once per frame
     private void Update()
     {
-        
+
+
 
         if (onGround == true)
-     {
-         //Disables WASD;
-        
-         GameObject.Find("placeholderFish").GetComponent<playerControl>().enabled = false;
-     }
-     else
-     {
+        {
+            //Disables WASD;
+
+            GameObject.Find("placeholderFish").GetComponent<playerControl>().enabled = false;
+        }
+        else
+        {
             //Enables WASD
             GameObject.Find("placeholderFish").GetComponent<playerControl>().enabled = true;
 
         }
 
-     //Jump Charge
-     if (onGround == true)
+        //Jump Charge
+        if (onGround == true)
         {
             //check's for player jump: if the player isn't holding space, execute random movement
-          //  jumpCheck = 1;
-           
+            //  jumpCheck = 1;
+
             //if holding jump button
             if (Input.GetButton("Jump"))
             {
-                //check's for player jump: if the player is holding space, pause random movement
-                jumpCheck = 0;
 
-               
+                
                 //Jump charge bar visual goes up
                 GameObject.Find("jumpChargeVisual").GetComponent<jumpChargeVisual>().isCharging = true;
-             
+
                 if (jumpPressure < maxJumpPressure)
                 {
                     jumpPressure += Time.deltaTime * 10f;
                 }
+                if (maxJumpPressure >= 10f)
+                {
+                    // StartCoroutine(forceJump());
+                }
                 else
                 {
                     jumpPressure = maxJumpPressure;
-                    
+
                 }
-                
+
             }
             //not holding jump button
             else
@@ -110,18 +115,25 @@ public class fishJumpControls : MonoBehaviour
                     rbody.velocity = new Vector3(0f, jumpPressure * JumpForce, 0f);
                     jumpPressure = 0f;
                     onGround = false;
-                   // jumpCheck = 1;
+
+
                 }
 
-               
+
             }
-           
+
         }
-
-       
     }
-
    
+    IEnumerator forceJump()
+    {
+        yield return new WaitForSeconds(5);
+        jumpPressure = jumpPressure + minJump;
+        rbody.velocity = new Vector3(0f, jumpPressure * JumpForce, 0f);
+        jumpPressure = 0f;
+        onGround = false;
+        
+    }
 
     private void OnCollisionEnter(Collision other)
     {
@@ -134,7 +146,7 @@ public class fishJumpControls : MonoBehaviour
 
     private void FixedUpdate()
     {
-       
+        
     }
 
 

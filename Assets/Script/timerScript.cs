@@ -64,9 +64,9 @@ public class timerScript : MonoBehaviour
         collectablesCopy = Instantiate(collectables, collectables.transform.position, collectables.transform.rotation);
         collectablesCopy.SetActive(false);
 
-        //finds score screen canvas
-        scoreScreen = GameObject.FindGameObjectWithTag("ScoreScreen");
-        scoreScreen.SetActive(false);
+
+        GetComponent<fishRandomMovement>().enabled = false;
+        
     }
 
     void Update()
@@ -83,7 +83,7 @@ public class timerScript : MonoBehaviour
         if (other.gameObject.CompareTag("start"))
         {
             //when player touched "start" game object, timer starts count down.
-            Debug.Log("collided start object");
+            //Debug.Log("collided start object");
             other.gameObject.SetActive(false);
             //show player game starts
             startText.enabled = true;
@@ -91,13 +91,16 @@ public class timerScript : MonoBehaviour
             //timer on
             TimerOn = true;
             timerIsRunning = true;
+
+
+            GetComponent<fishRandomMovement>().enabled = true;
         }
 
         if (other.gameObject.CompareTag("goal"))
         {
             //when player touched "goal" game object, timer stop count down.
-            Debug.Log("collided goal object");
-            other.gameObject.SetActive(false);
+            //Debug.Log("collided goal object");
+            //other.gameObject.SetActive(false);
             //show a player game end
             gameEndText.enabled = true;
             gameEndText.text = "You Win!";

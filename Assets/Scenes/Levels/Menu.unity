@@ -5261,7 +5261,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 0.91931224, b: 0.49411762, a: 1}
+    m_NormalColor: {r: 1, g: 0.89003944, b: 0.32452828, a: 1}
     m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 1, g: 0.87710387, b: 0.3537736, a: 1}
     m_SelectedColor: {r: 0.9433962, g: 0.8368497, b: 0.25364897, a: 1}
@@ -5283,7 +5283,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1547069512}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2100494592}
+        m_TargetAssemblyTypeName: SceneSwitch, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 4
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1547069512
 MonoBehaviour:
   m_ObjectHideFlags: 0
