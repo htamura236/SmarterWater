@@ -20,7 +20,7 @@ public class jumpChargeVisual : MonoBehaviour
 
     private void Start()
     {
-        JumpForce = gameObject.GetComponent<fishJumpControls>().JumpForce;
+        //JumpForce = gameObject.GetComponent<fishJumpControls>().JumpForce;
         
     }
     void Update()

@@ -78,7 +78,7 @@ public class fishRandomMovement : MonoBehaviour
         yield return new WaitForSeconds(1/2);
         randomDirection = Random.Range(1, 5);
         yield return new WaitForSeconds(1 / 2);
-        print(randomDirection);
+        //print(randomDirection); commented out so i could see errors on the log easier - vivian
 
         if(randomDirection == 1)
         {
