@@ -11,7 +11,6 @@ public class GameController : MonoBehaviour
 
 
     [Header("Current Level Stats")]
-    [SerializeField]
     static public float secondsRemaining;
     static public int bottlesCollected;
     static public bool Trophypickedup;
@@ -21,19 +20,25 @@ public class GameController : MonoBehaviour
 
     [Header("Score Equation Modifiers")]
 
-    [SerializeField]
-    private float SecondstoPointsRatio;
-    [SerializeField]
-    private float bottlestoPointsRatio;
-    [SerializeField]
-    private float tropyPointMultiplyer;
+    static public float SecondstoPointsRatio;
+    static public float bottlestoPointsRatio;
+    static public float tropyPointMultiplyer;
 
     [Header("Trophy Tracking")]
     static public bool TrophyL1;
     static public bool TrophyL2;
     static public bool TrophyL3;
 
-    /* used for testing
+    //able to be set in inspector
+    [Header("Equation Variables")]
+    [SerializeField]
+    private float timeRatio;
+    [SerializeField]
+    private float bottleRatio;
+    [SerializeField]
+    private float trophyMultiplyer;
+
+    // /* used for testing
     [Header("test display")]
     public int lvcompletetest;
     public float secondsRemainingTest;
@@ -41,7 +46,7 @@ public class GameController : MonoBehaviour
     public bool TrophypickedupTest;
     public int levelNumberTest;
     public int scoretest;
-    */
+    // */
 
 
 
@@ -59,6 +64,11 @@ public class GameController : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+        //sets ratios and multiplyer used in equation from ones in inspector
+        SecondstoPointsRatio = timeRatio;
+        bottlestoPointsRatio = bottleRatio;
+        tropyPointMultiplyer = trophyMultiplyer;
     }
 
     private void Start()
@@ -70,14 +80,14 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /* used for testing
+        // /* used for testing
         lvcompletetest = levelsComplete;
         secondsRemainingTest = secondsRemaining;
         bottlesCollectedTest = bottlesCollected;
         TrophypickedupTest = Trophypickedup;
         levelNumberTest = levelNumber;
 
-        scoretest = score;*/
+        scoretest = score; // */
 
         
 }

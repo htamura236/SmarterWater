@@ -29,6 +29,21 @@ public class timerScript : MonoBehaviour
     private GameObject collectables;
     private GameObject collectablesCopy;
 
+    //score screen canvas
+    [SerializeField]
+    private GameObject scoreScreen;
+
+    [Header("Scorescreen Text")]
+    //score screen text
+    [SerializeField]
+    private Text timeText;
+    [SerializeField]
+    private Text bottleText;
+    [SerializeField]
+    private Text trophyText;
+    [SerializeField]
+    private Text scoreText;
+
 
     void Start()
     {
@@ -51,6 +66,7 @@ public class timerScript : MonoBehaviour
 
 
         GetComponent<fishRandomMovement>().enabled = false;
+        
     }
 
     void Update()
@@ -98,18 +114,46 @@ public class timerScript : MonoBehaviour
             DontDestroyOnLoad(GameObject.FindGameObjectWithTag("GameController"));
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+            scoreScreen.SetActive(true);
             // value updates
-            if(SceneManager.GetActiveScene().buildIndex > GameController.levelsComplete)
+            if (SceneManager.GetActiveScene().buildIndex > GameController.levelsComplete)
             {
                 GameController.levelsComplete = SceneManager.GetActiveScene().buildIndex;
             }
 
+            /*
             GameObject gameController = GameObject.FindGameObjectWithTag("GameController");
             if (gameController != null)
             {
                 GameController.score = gameController.GetComponent<GameController>().ScoreEquation(GameController.secondsRemaining, GameController.bottlesCollected, GameController.Trophypickedup);
             }
-            SceneManager.LoadScene(0);
+            */
+
+            //score screen updates
+            if(scoreScreen != null)
+            {
+                float timeScore;
+                float bottleScore;
+                float trophy = 1;
+
+                timeText.text = Mathf.RoundToInt(timeRemaining) + " X " + GameController.SecondstoPointsRatio + " = " + (Mathf.RoundToInt(timeRemaining) * GameController.SecondstoPointsRatio);
+                bottleText.text = GameController.bottlesCollected + " X " + GameController.bottlestoPointsRatio + " = " + (GameController.bottlesCollected * GameController.bottlestoPointsRatio);
+                timeScore = (Mathf.RoundToInt(timeRemaining) * GameController.SecondstoPointsRatio);
+                bottleScore = (GameController.bottlesCollected * GameController.bottlestoPointsRatio);
+                if (GameController.Trophypickedup)
+                {
+                    trophyText.text = " X " + GameController.tropyPointMultiplyer;
+                    trophy = GameController.tropyPointMultiplyer;
+                }
+                else if (!GameController.Trophypickedup)
+                {
+                    trophyText.text = " --- ";
+                    trophy = 1;
+                }
+
+                GameController.score = Mathf.RoundToInt((timeScore + bottleScore) * trophy);
+                scoreText.text = GameController.score.ToString();
+            }
         }
 
         // for water bottle collectible

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitch : MonoBehaviour
 {
-    public void LoadScene(int sceneNum)
+    public void LoadSceneRefresh(int sceneNum)
     {
         DontDestroyOnLoad(GameObject.FindGameObjectWithTag("GameController"));
         GameController.levelNumber = sceneNum;
@@ -13,7 +13,13 @@ public class SceneSwitch : MonoBehaviour
         GameController.secondsRemaining = 0;
         GameController.Trophypickedup = false;
         SceneManager.LoadScene(sceneNum);
-    } 
+    }
+
+    public void LoadScene(int sceneNum)
+    {
+        DontDestroyOnLoad(GameObject.FindGameObjectWithTag("GameController"));
+        SceneManager.LoadScene(sceneNum);
+    }
 
     public void RevealOrHide(GameObject gObject)
     {
