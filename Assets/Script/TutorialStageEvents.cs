@@ -11,10 +11,20 @@ public class TutorialStageEvents : MonoBehaviour
 
     public Text displayMessage;
 
+    public Text sBottleText;
+    public Text BottleText;
+    public Text trophyText;
+
+
     void Start ()
     {
         displayMessage.enabled = true;
         isCountDownOn = false;
+
+
+        sBottleText.enabled = false;
+        BottleText.enabled = false;
+        trophyText.enabled = false;
     }
     void Update()
     {
@@ -27,13 +37,17 @@ public class TutorialStageEvents : MonoBehaviour
         {
             isCountDownOn = true;
         }
-        if (other.gameObject.CompareTag("tutorial2"))
+        if (other.gameObject.CompareTag("Trophy"))
         {
-
+            trophyText.enabled = true;
         }
-        if (other.gameObject.CompareTag("tutorial3"))
+        if (other.gameObject.CompareTag("sBottle"))
         {
-
+            sBottleText.enabled = true;
+        }
+        if (other.gameObject.CompareTag("Bottle"))
+        {
+            BottleText.enabled = true;
         }
     }
 

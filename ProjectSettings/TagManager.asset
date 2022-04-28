@@ -13,6 +13,7 @@ TagManager:
   - Collectables
   - Trophy
   - ScoreScreen
+  - sBottle
   layers:
   - Default
   - TransparentFX
