@@ -15,6 +15,11 @@ public class SceneSwitch : MonoBehaviour
         SceneManager.LoadScene(sceneNum);
     }
 
+    public void backMenuScene()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     public void LoadScene(int sceneNum)
     {
         DontDestroyOnLoad(GameObject.FindGameObjectWithTag("GameController"));
