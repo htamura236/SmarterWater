@@ -5459,7 +5459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6784314, g: 0.6784314, b: 0.6784314, a: 1}
+  m_Color: {r: 0.6901961, g: 0.49411765, b: 0.3019608, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6468,17 +6468,17 @@ MonoBehaviour:
   - {fileID: 876990959}
   - {fileID: 35586692}
   - {fileID: 1256226705}
-  ThreshHoldsLv1: f4010000e8030000d0070000
+  ThreshHoldsLv1: 90010000dc050000a00f0000
   MedalIconsLv2:
   - {fileID: 869968371}
   - {fileID: 397840765}
   - {fileID: 616268317}
-  ThreshHoldsLv2: 9001000020030000d0070000
+  ThreshHoldsLv2: 58020000d007000088130000
   MedalIconsLv3:
   - {fileID: 315458806}
   - {fileID: 634050734}
   - {fileID: 680089698}
-  ThreshHoldsLv3: 58020000e8030000ca080000
+  ThreshHoldsLv3: e8030000b80b00004c1d0000
   Level1:
   - {fileID: 719655675}
   - {fileID: 103555551}
@@ -6494,7 +6494,7 @@ MonoBehaviour:
   level2Button: {fileID: 124364604}
   level3Button: {fileID: 888613203}
   lv2Requirment: 0
-  lv3Requirment: 1
+  lv3Requirment: 0
 --- !u!4 &2111476876
 Transform:
   m_ObjectHideFlags: 0

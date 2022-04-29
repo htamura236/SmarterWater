@@ -48,7 +48,7 @@ public class timerScript : MonoBehaviour
     void Start()
     {
         //timer's format. you need to change "40" according to the time you set
-        countText.text = string.Format("{1:00}:{0:31}", minutes, seconds);
+        countText.text = string.Format("{0:00}:{0:00}", minutes, seconds);
         //timer is off at the start point
         TimerOn = false;
         timerIsRunning = false;
@@ -225,22 +225,27 @@ public class timerScript : MonoBehaviour
         //gameObject.SetActive(false);
         //respawn to the first position 
         //playerPos.position = new Vector3(respawnPoint.position.x, respawnPoint.position.y, respawnPoint.position.z);
+        DontDestroyOnLoad(GameObject.FindGameObjectWithTag("GameController"));
+        GameController.score = 0;
         SceneManager.LoadScene(0);
 
         //show menu so that player can choose "restart, or "back to menu"
 
-        timeRemaining = 33;
 
-       //collectables managment
+        //collectables managment
+        /* no longer needed
+         * 
+         *         timeRemaining = 33;
+         * 
+         Destroy(collectables);
+         collectablesCopy.SetActive(true);
+         collectables = Instantiate(collectablesCopy, collectablesCopy.transform.position, collectablesCopy.transform.rotation); 
+         collectablesCopy.SetActive(false);
 
-        Destroy(collectables);
-        collectablesCopy.SetActive(true);
-        collectables = Instantiate(collectablesCopy, collectablesCopy.transform.position, collectablesCopy.transform.rotation); 
-        collectablesCopy.SetActive(false);
-
-        GameController.Trophypickedup = false;
-        //resets mouse so menu is workable
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+         GameController.Trophypickedup = false;
+         //resets mouse so menu is workable
+         Cursor.visible = true;
+         Cursor.lockState = CursorLockMode.None;
+        */
     }
 }
