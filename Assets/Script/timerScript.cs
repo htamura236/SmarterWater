@@ -61,7 +61,6 @@ public class timerScript : MonoBehaviour
     [SerializeField]
     private Text scoreText;
 
-<<<<<<< Updated upstream
     //animator
     [SerializeField]
     private Animator fishAnim;
@@ -73,6 +72,7 @@ public class timerScript : MonoBehaviour
 >>>>>>> parent of 14ce2f3 (file broken)
     //youdied text fade in alpha
     private float currentAlpha = 0;
+<<<<<<< HEAD
 =======
     public float displayRemaining = 10;
     private bool isTimeRemaining;
@@ -87,6 +87,8 @@ public class timerScript : MonoBehaviour
 >>>>>>> parent of da9b694 (Death Screen Added to make death less jarring)
 =======
 >>>>>>> parent of 14ce2f3 (file broken)
+=======
+>>>>>>> parent of bc9645c (file is broken)
 
     void Awake()
     {
@@ -141,7 +143,6 @@ public class timerScript : MonoBehaviour
         //tracking for score
         GameController.secondsRemaining = timeRemaining;
 
-<<<<<<< Updated upstream
 
         //for Animator
         if(timerIsRunning)
@@ -153,9 +154,6 @@ public class timerScript : MonoBehaviour
         {
             startText.enabled = false;
         }
-=======
-        countDown();
->>>>>>> Stashed changes
     }
 
 
@@ -174,7 +172,6 @@ public class timerScript : MonoBehaviour
             TimerOn = true;
             timerIsRunning = true;
 
-            isCountDownOn = true;
 
             GetComponent<fishRandomMovement>().enabled = true;
         }
@@ -359,7 +356,6 @@ public class timerScript : MonoBehaviour
          Cursor.lockState = CursorLockMode.None;
         */
     }
-<<<<<<< Updated upstream
 
     private IEnumerator TimeAddedTextDisplay()
     {
@@ -400,6 +396,7 @@ public class timerScript : MonoBehaviour
             yield return new WaitForSeconds(0.25f);
         }
     }
+<<<<<<< HEAD
 =======
     void countDown()
     {
@@ -422,4 +419,6 @@ public class timerScript : MonoBehaviour
 >>>>>>> parent of da9b694 (Death Screen Added to make death less jarring)
 =======
 >>>>>>> parent of 14ce2f3 (file broken)
+=======
+>>>>>>> parent of bc9645c (file is broken)
 }

@@ -24,6 +24,7 @@ EditorUserSettings:
       value: 22424703114646680e0b0227036c731500121439633c3324223b1432eeae2136ebf32f
       flags: 0
     RecentlyUsedScenePath-6:
+<<<<<<< HEAD
       value: 22424703114646680e0b0227036c7315001214396305233e3867083debf42d
       flags: 0
     RecentlyUsedScenePath-7:
@@ -34,6 +35,18 @@ EditorUserSettings:
       flags: 0
     RecentlyUsedScenePath-9:
       value: 22424703114646680e0b0227036c7315001214396304232628255d62acf53a31f6fe
+=======
+      value: 22424703114646680e0b0227036c7315001214396304232628255d61acf53a31f6fe
+      flags: 0
+    RecentlyUsedScenePath-7:
+      value: 22424703114646680e0b0227036c7315001214396304232628255d60acf53a31f6fe
+      flags: 0
+    RecentlyUsedScenePath-8:
+      value: 22424703114646680e0b0227036c7315001214396304232628255d62acf53a31f6fe
+      flags: 0
+    RecentlyUsedScenePath-9:
+      value: 22424703114646680e0b0227036c731500121439631c2f24212c2e30e7ee3176f7e93ffdfe
+>>>>>>> parent of bc9645c (file is broken)
       flags: 0
   m_VCAutomaticAdd: 1
   m_VCDebugCom: 0
