@@ -89,6 +89,11 @@ public class timerScript : MonoBehaviour
         {
             fishAnim.SetBool("Start", true);
         }
+
+        if(timeRemaining < 58)
+        {
+            startText.enabled = false;
+        }
     }
 
 
