@@ -6297,10 +6297,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8043231652091685862, guid: 555f7804da965264cac092feb62a7830, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.19995117
-      objectReference: {fileID: 0}
     - target: {fileID: 8043231652509143941, guid: 555f7804da965264cac092feb62a7830, type: 3}
       propertyPath: m_Name
       value: Scoring Screen
@@ -6388,22 +6384,6 @@ PrefabInstance:
     - target: {fileID: 8043231652509146233, guid: 555f7804da965264cac092feb62a7830, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8043231652822158297, guid: 555f7804da965264cac092feb62a7830, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -2.790039
-      objectReference: {fileID: 0}
-    - target: {fileID: 8043231653347796403, guid: 555f7804da965264cac092feb62a7830, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.4979248
-      objectReference: {fileID: 0}
-    - target: {fileID: 8043231653347796403, guid: 555f7804da965264cac092feb62a7830, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.3999939
-      objectReference: {fileID: 0}
-    - target: {fileID: 8043231653542930589, guid: 555f7804da965264cac092feb62a7830, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.20007324
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 555f7804da965264cac092feb62a7830, type: 3}
