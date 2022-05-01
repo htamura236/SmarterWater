@@ -63,6 +63,7 @@ public class timerScript : MonoBehaviour
     private Animator fishAnim;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     //youdied text fade in alpha
     private float currentAlpha = 0;
 =======
@@ -72,6 +73,8 @@ public class timerScript : MonoBehaviour
 
     public Text displayMessage;
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of da9b694 (Death Screen Added to make death less jarring)
 =======
 >>>>>>> parent of da9b694 (Death Screen Added to make death less jarring)
 
@@ -318,6 +321,7 @@ public class timerScript : MonoBehaviour
         timeAddedText.enabled = false;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     private IEnumerator YouDiedFadeIn()
     {
@@ -357,6 +361,8 @@ public class timerScript : MonoBehaviour
     }
 
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of da9b694 (Death Screen Added to make death less jarring)
 =======
 >>>>>>> parent of da9b694 (Death Screen Added to make death less jarring)
 }
