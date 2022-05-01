@@ -45,7 +45,7 @@ public class timerScript : MonoBehaviour
     private Text scoreText;
 
 
-    void Start()
+    void Awake()
     {
         //timer's format. you need to change "40" according to the time you set
         countText.text = string.Format("{0:00}:{0:00}", minutes, seconds);

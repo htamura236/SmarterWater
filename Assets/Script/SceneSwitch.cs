@@ -14,7 +14,7 @@ public class SceneSwitch : MonoBehaviour
     private bool locked;
     private bool timerGoing;
 
-    private void Start()
+    private void Awake()
     {
         if(GameObject.FindGameObjectWithTag("Player") != null)
         {
@@ -81,7 +81,7 @@ public class SceneSwitch : MonoBehaviour
 
     private void PauseMenu()
     {
-        if(player != null)
+        if(player != null && player.activeSelf)
         {
             camraControl camra = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<camraControl>();
             timerScript timer = player.GetComponent<timerScript>();
