@@ -9,6 +9,10 @@ public class timerScript : MonoBehaviour
 
     //Reference: https://gamedevbeginner.com/how-to-make-countdown-timer-in-unity-minutes-seconds/
 
+    //used to determine how long the time added text appears, 3 by default
+    [SerializeField]
+    private float addTextTime = 3;
+    
     //used to time how long the game start text appears
     [SerializeField]
     private int startTextTime = 2;
@@ -23,6 +27,12 @@ public class timerScript : MonoBehaviour
     public Text countText;
     public Text startText;
     public Text gameEndText;
+
+    //time added text for when a bottle is picked up
+    [SerializeField]
+    private Text timeAddedText;
+
+
     //respawn
     private Transform respawnPoint;
     private Transform playerPos;
@@ -54,6 +64,8 @@ public class timerScript : MonoBehaviour
 
     void Awake()
     {
+        timeAddedText.enabled = false;
+
         //timer's format. you need to change "40" according to the time you set
         countText.text = string.Format("{0:00}:{0:00}", minutes, seconds);
         //timer is off at the start point
@@ -190,12 +202,18 @@ public class timerScript : MonoBehaviour
             }
             GameController.bottlesCollected++;
             Destroy(other.gameObject);
+
+            timeAddedText.text = " + " + bottle.secondsAdded.ToString();
+
+            StartCoroutine("TimeAddedTextDisplay");
         }
 
         if(other.gameObject.tag == "Trophy")
         {
             GameController.Trophypickedup = true;
             Destroy(other.gameObject);
+
+            timeAddedText.text = "Trophy Get!";
         }
     }
 
@@ -268,5 +286,16 @@ public class timerScript : MonoBehaviour
          Cursor.visible = true;
          Cursor.lockState = CursorLockMode.None;
         */
+    }
+
+    private IEnumerator TimeAddedTextDisplay()
+    {
+        for (int i = 0; i < 1; i++)
+        {
+            timeAddedText.enabled = true;
+
+            yield return new WaitForSeconds(addTextTime);
+        }
+        timeAddedText.enabled = false;
     }
 }
