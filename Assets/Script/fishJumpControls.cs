@@ -15,7 +15,9 @@ using UnityEngine;
 
 public class fishJumpControls : MonoBehaviour
 {
-
+    //animator
+    [SerializeField]
+    private Animator fishAnim;
 
     //jump
     [Header("Jump Force needs to be changed in fishRandomMovement script too")]
@@ -56,19 +58,30 @@ public class fishJumpControls : MonoBehaviour
     //Update is called once per frame
     private void Update()
     {
-
+        //used for animator
+        if (fishAnim != null)
+        {
+            if(onGround)
+            {
+                fishAnim.SetBool("inAir", false);
+            }
+            else if (!onGround)
+            {
+                fishAnim.SetBool("inAir", true);
+            }
+        }
 
 
         if (onGround == true)
         {
             //Disables WASD;
 
-            GameObject.Find("placeholderFish").GetComponent<playerControl>().enabled = false;
+            GameObject.Find("Fish").GetComponent<playerControl>().enabled = false;
         }
         else
         {
             //Enables WASD
-            GameObject.Find("placeholderFish").GetComponent<playerControl>().enabled = true;
+            GameObject.Find("Fish").GetComponent<playerControl>().enabled = true;
 
         }
 

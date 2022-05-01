@@ -44,6 +44,10 @@ public class timerScript : MonoBehaviour
     [SerializeField]
     private Text scoreText;
 
+    //animator
+    [SerializeField]
+    private Animator fishAnim;
+
 
     void Awake()
     {
@@ -78,7 +82,15 @@ public class timerScript : MonoBehaviour
         timerFunction();
         //tracking for score
         GameController.secondsRemaining = timeRemaining;
+
+
+        //for Animator
+        if(timerIsRunning)
+        {
+            fishAnim.SetBool("Start", true);
+        }
     }
+
 
 
     void OnTriggerEnter(Collider other)

@@ -9,6 +9,8 @@ public class SceneSwitch : MonoBehaviour
     private GameObject player;
     [SerializeField]
     private GameObject pauseMenu;
+    [SerializeField]
+    private Animator fishAnim;
 
     private Vector3 lockPos;
     private bool locked;
@@ -45,6 +47,7 @@ public class SceneSwitch : MonoBehaviour
         GameController.bottlesCollected = 0;
         GameController.secondsRemaining = 0;
         GameController.Trophypickedup = false;
+        GameController.score = 0;
         SceneManager.LoadScene(sceneNum);
     }
 
@@ -103,6 +106,8 @@ public class SceneSwitch : MonoBehaviour
                         {
                             timer.timerIsRunning = true;
                         }
+
+                        fishAnim.enabled = true;
                     }
                     else
                     {
@@ -120,6 +125,7 @@ public class SceneSwitch : MonoBehaviour
                         }
 
                         timer.timerIsRunning = false;
+                        fishAnim.enabled = false;
                     }
                 }
             }
@@ -149,6 +155,8 @@ public class SceneSwitch : MonoBehaviour
                     {
                         timer.timerIsRunning = true;
                     }
+
+                    fishAnim.enabled = true;
                 }
             }
         }
