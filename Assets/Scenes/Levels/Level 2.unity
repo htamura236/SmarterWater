@@ -21091,6 +21091,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3006087306113177540}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &4012986703834122942
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1623406845307214529, guid: 5d4e160261f655f4696033fa754f4cd6, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623406845307214529, guid: 5d4e160261f655f4696033fa754f4cd6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 370.85892
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623406845307214529, guid: 5d4e160261f655f4696033fa754f4cd6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 553.685
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623406845307214529, guid: 5d4e160261f655f4696033fa754f4cd6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -281.52298
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623406845307214529, guid: 5d4e160261f655f4696033fa754f4cd6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623406845307214529, guid: 5d4e160261f655f4696033fa754f4cd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623406845307214529, guid: 5d4e160261f655f4696033fa754f4cd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623406845307214529, guid: 5d4e160261f655f4696033fa754f4cd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623406845307214529, guid: 5d4e160261f655f4696033fa754f4cd6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623406845307214529, guid: 5d4e160261f655f4696033fa754f4cd6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623406845307214529, guid: 5d4e160261f655f4696033fa754f4cd6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444367366724823094, guid: 5d4e160261f655f4696033fa754f4cd6, type: 3}
+      propertyPath: m_Name
+      value: Pause System
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5d4e160261f655f4696033fa754f4cd6, type: 3}
 --- !u!65 &4089585905584220237
 BoxCollider:
   m_ObjectHideFlags: 0
