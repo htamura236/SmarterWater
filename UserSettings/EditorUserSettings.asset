@@ -30,10 +30,17 @@ EditorUserSettings:
       value: 22424703114646680e0b0227036c7315001214396304232628255d60acf53a31f6fe
       flags: 0
     RecentlyUsedScenePath-8:
+<<<<<<< Updated upstream
       value: 22424703114646680e0b0227036c7315001214396304232628255d62acf53a31f6fe
       flags: 0
     RecentlyUsedScenePath-9:
       value: 22424703114646680e0b0227036c731500121439631c2f24212c2e30e7ee3176f7e93ffdfe
+=======
+      value: 22424703114646680e0b0227036c7315001214396305233e3867083debf42d
+      flags: 0
+    RecentlyUsedScenePath-9:
+      value: 22424703114646680e0b0227036c7315001214396304232628255d62acf53a31f6fe
+>>>>>>> Stashed changes
       flags: 0
   m_VCAutomaticAdd: 1
   m_VCDebugCom: 0

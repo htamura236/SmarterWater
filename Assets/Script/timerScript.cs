@@ -61,12 +61,20 @@ public class timerScript : MonoBehaviour
     [SerializeField]
     private Text scoreText;
 
+<<<<<<< Updated upstream
     //animator
     [SerializeField]
     private Animator fishAnim;
 
     //youdied text fade in alpha
     private float currentAlpha = 0;
+=======
+    public float displayRemaining = 10;
+    private bool isTimeRemaining;
+    private bool isCountDownOn;
+
+    public Text displayMessage;
+>>>>>>> Stashed changes
 
     void Awake()
     {
@@ -121,6 +129,7 @@ public class timerScript : MonoBehaviour
         //tracking for score
         GameController.secondsRemaining = timeRemaining;
 
+<<<<<<< Updated upstream
 
         //for Animator
         if(timerIsRunning)
@@ -132,6 +141,9 @@ public class timerScript : MonoBehaviour
         {
             startText.enabled = false;
         }
+=======
+        countDown();
+>>>>>>> Stashed changes
     }
 
 
@@ -150,6 +162,7 @@ public class timerScript : MonoBehaviour
             TimerOn = true;
             timerIsRunning = true;
 
+            isCountDownOn = true;
 
             GetComponent<fishRandomMovement>().enabled = true;
         }
@@ -334,6 +347,7 @@ public class timerScript : MonoBehaviour
          Cursor.lockState = CursorLockMode.None;
         */
     }
+<<<<<<< Updated upstream
 
     private IEnumerator TimeAddedTextDisplay()
     {
@@ -369,4 +383,19 @@ public class timerScript : MonoBehaviour
             yield return new WaitForSeconds(0.25f);
         }
     }
+=======
+    void countDown()
+    {
+        if (isCountDownOn = true && displayRemaining > 0)
+        {
+            displayRemaining -= Time.deltaTime;
+        }
+        else
+        {
+            isTimeRemaining = false;
+            displayMessage.enabled = false;
+        }
+    }
+
+>>>>>>> Stashed changes
 }
