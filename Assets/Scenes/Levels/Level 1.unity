@@ -5767,6 +5767,10 @@ PrefabInstance:
       propertyPath: collectables
       value: 
       objectReference: {fileID: 1201009276}
+    - target: {fileID: 5714345801576970997, guid: 7ea21d7492524d34a87ce13c9f45df95, type: 3}
+      propertyPath: startTextTime
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5714345801576970999, guid: 7ea21d7492524d34a87ce13c9f45df95, type: 3}
       propertyPath: m_Name
       value: Fish

@@ -9,7 +9,10 @@ public class timerScript : MonoBehaviour
 
     //Reference: https://gamedevbeginner.com/how-to-make-countdown-timer-in-unity-minutes-seconds/
 
-  
+    //used to time how long the game start text appears
+    [SerializeField]
+    private int startTextTime = 2;
+    private int startingTimeAmount;
   
     public float timeRemaining = 10;
     public float seconds, minutes;
@@ -73,7 +76,8 @@ public class timerScript : MonoBehaviour
         scoreScreen.SetActive(false);
 
         GetComponent<fishRandomMovement>().enabled = false;
-        
+
+        startingTimeAmount = Mathf.RoundToInt(timeRemaining);
     }
 
     void Update()
@@ -90,7 +94,7 @@ public class timerScript : MonoBehaviour
             fishAnim.SetBool("Start", true);
         }
 
-        if(timeRemaining < 58)
+        if(timeRemaining < startingTimeAmount - startTextTime)
         {
             startText.enabled = false;
         }
