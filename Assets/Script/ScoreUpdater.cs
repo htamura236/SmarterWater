@@ -65,6 +65,7 @@ public class ScoreUpdater : MonoBehaviour
         print(GameController.score);
         int levelScore = GameController.levelNumber - 1;
         if(levelScore < 0) { levelScore = 0; }
+        if(levelScore > 3) { levelScore = 0; }
 
         //highscore updates
         if (GameController.score > GameController.highScores[levelScore])

@@ -511,6 +511,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63cb8e60c26edc34cb52a16871b95465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}
+  fishAnim: {fileID: 0}
 --- !u!1 &8043231652805020829
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,7 +722,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -840,7 +842,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.1825589, y: 0.7533334}
   m_AnchorMax: {x: 0.3185, y: 0.99155575}
-  m_AnchoredPosition: {x: 0.19995117, y: 1.6497955}
+  m_AnchoredPosition: {x: 0.19995117, y: 1.6497803}
   m_SizeDelta: {x: 1.8577995, y: 2.9285011}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8043231653027451887
@@ -1148,7 +1150,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.012750001, y: 0.7915589}
   m_AnchorMax: {x: 0.18625, y: 0.95046014}
-  m_AnchoredPosition: {x: 0.2000122, y: 0.539505}
+  m_AnchoredPosition: {x: 0.2000122, y: 0.53952026}
   m_SizeDelta: {x: 1.6875, y: 0.92109966}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8043231653542930591

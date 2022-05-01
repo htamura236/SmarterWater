@@ -266,7 +266,7 @@ public class timerScript : MonoBehaviour
         //playerPos.position = new Vector3(respawnPoint.position.x, respawnPoint.position.y, respawnPoint.position.z);
         DontDestroyOnLoad(GameObject.FindGameObjectWithTag("GameController"));
         GameController.score = 0;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(5);
 
         //show menu so that player can choose "restart, or "back to menu"
 

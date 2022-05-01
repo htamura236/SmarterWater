@@ -6269,10 +6269,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scoring Screen
       objectReference: {fileID: 0}
-    - target: {fileID: 8043231652509143941, guid: 555f7804da965264cac092feb62a7830, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8043231652509146233, guid: 555f7804da965264cac092feb62a7830, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -6356,14 +6352,6 @@ PrefabInstance:
     - target: {fileID: 8043231652509146233, guid: 555f7804da965264cac092feb62a7830, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8043231653027451885, guid: 555f7804da965264cac092feb62a7830, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 1.6497803
-      objectReference: {fileID: 0}
-    - target: {fileID: 8043231653542930589, guid: 555f7804da965264cac092feb62a7830, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.53952026
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 555f7804da965264cac092feb62a7830, type: 3}

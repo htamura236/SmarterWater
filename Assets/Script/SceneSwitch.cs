@@ -42,7 +42,10 @@ public class SceneSwitch : MonoBehaviour
 
     public void LoadSceneRefresh(int sceneNum)
     {
-        DontDestroyOnLoad(GameObject.FindGameObjectWithTag("GameController"));
+        if(GameObject.FindGameObjectWithTag("GameController") != null)
+        {
+            DontDestroyOnLoad(GameObject.FindGameObjectWithTag("GameController"));
+        }
         GameController.levelNumber = sceneNum;
         GameController.bottlesCollected = 0;
         GameController.secondsRemaining = 0;
