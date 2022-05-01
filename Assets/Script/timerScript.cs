@@ -46,6 +46,10 @@ public class timerScript : MonoBehaviour
     [SerializeField]
     private GameObject scoreScreen;
 
+    //death screen canvas
+    [SerializeField]
+    private GameObject deathScreen;
+
     [Header("Scorescreen Text")]
     //score screen text
     [SerializeField]
@@ -61,10 +65,26 @@ public class timerScript : MonoBehaviour
     [SerializeField]
     private Animator fishAnim;
 
+    //youdied text fade in alpha
+    private float currentAlpha = 0;
 
     void Awake()
     {
         timeAddedText.enabled = false;
+
+        //you died alpha setting
+
+        CanvasRenderer[] youDied;
+        youDied = new CanvasRenderer[2];
+        youDied[0] = deathScreen.transform.Find("Background").GetComponent<CanvasRenderer>();
+        youDied[1] = deathScreen.transform.Find("Background").transform.Find("YouDied").GetComponent<CanvasRenderer>();
+
+
+        foreach (CanvasRenderer item in youDied)
+        {
+            item.SetAlpha(0f);
+        }
+
 
         //timer's format. you need to change "40" according to the time you set
         countText.text = string.Format("{0:00}:{0:00}", minutes, seconds);
@@ -90,6 +110,8 @@ public class timerScript : MonoBehaviour
         GetComponent<fishRandomMovement>().enabled = false;
 
         startingTimeAmount = Mathf.RoundToInt(timeRemaining);
+
+        deathScreen.SetActive(false);
     }
 
     void Update()
@@ -244,7 +266,7 @@ public class timerScript : MonoBehaviour
                 }
                 else if(timeRemaining <= 0)
                 {
-                    Debug.Log("time over");
+                    //Debug.Log("time over");
                     fishDie();
                 }
             }
@@ -264,9 +286,34 @@ public class timerScript : MonoBehaviour
         //gameObject.SetActive(false);
         //respawn to the first position 
         //playerPos.position = new Vector3(respawnPoint.position.x, respawnPoint.position.y, respawnPoint.position.z);
-        DontDestroyOnLoad(GameObject.FindGameObjectWithTag("GameController"));
+
+
         GameController.score = 0;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        
+
+        deathScreen.SetActive(true);
+        if(deathScreen != null)
+        {
+            StartCoroutine("YouDiedFadeIn");
+        }
+
+        GameObject player = this.gameObject;
+        player.GetComponent<fishRandomMovement>().enabled = false;
+        player.GetComponent<playerControl>().enabled = false;
+        player.GetComponent<fishJumpControls>().enabled = false;
+        player.transform.Find("Main Camera").GetComponent<camraControl>().enabled = false;
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+        fishAnim.SetBool("Death", true);
+       
+
+        //DontDestroyOnLoad(GameObject.FindGameObjectWithTag("GameController"));
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+
 
         //show menu so that player can choose "restart, or "back to menu"
 
@@ -297,5 +344,29 @@ public class timerScript : MonoBehaviour
             yield return new WaitForSeconds(addTextTime);
         }
         timeAddedText.enabled = false;
+    }
+
+    private IEnumerator YouDiedFadeIn()
+    {
+        CanvasRenderer[] youDied;
+        youDied = new CanvasRenderer[2];
+        youDied[0] = deathScreen.transform.Find("Background").GetComponent<CanvasRenderer>();
+        youDied[1] = deathScreen.transform.Find("Background").transform.Find("YouDied").GetComponent<CanvasRenderer>();
+
+        foreach (CanvasRenderer item in youDied)
+        {
+                item.SetAlpha(0f);
+        }
+
+        for (int i = 0; i < 20; i++)
+        {
+            foreach (CanvasRenderer item in youDied)
+            {
+                currentAlpha += 0.0001f;
+                item.SetAlpha(currentAlpha);
+
+            }
+            yield return new WaitForSeconds(0.25f);
+        }
     }
 }
