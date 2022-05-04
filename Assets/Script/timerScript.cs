@@ -31,6 +31,8 @@ public class timerScript : MonoBehaviour
     //time added text for when a bottle is picked up
     [SerializeField]
     private Text timeAddedText;
+    [SerializeField]
+    private Text timeLostText;
 
 
     //respawn
@@ -71,6 +73,7 @@ public class timerScript : MonoBehaviour
     void Awake()
     {
         timeAddedText.enabled = false;
+        timeLostText.enabled = false;
 
         //you died alpha setting
 
@@ -230,12 +233,56 @@ public class timerScript : MonoBehaviour
             StartCoroutine("TimeAddedTextDisplay");
         }
 
-        if(other.gameObject.tag == "Trophy")
+        //for soysauce/salt piles
+        if (other.gameObject.tag == "TimeLoss")
+        {
+            BottleCollectable bottle = other.gameObject.GetComponent<BottleCollectable>();
+            if (bottle != null)
+            {
+                timeRemaining -= bottle.secondsAdded;
+            }
+
+            Destroy(other.gameObject);
+
+            timeLostText.text = " - " + bottle.secondsAdded.ToString();
+
+            StartCoroutine("TimeLossTextDisplay");
+        }
+
+        if (other.gameObject.tag == "Trophy")
         {
             GameController.Trophypickedup = true;
             Destroy(other.gameObject);
 
             timeAddedText.text = "Trophy Get!";
+        }
+
+        if (other.gameObject.tag =="Candle")
+        {
+            timeRemaining = 0.1f;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Towel")
+        {
+            print("towel collided");
+            if(other.GetComponent<TowelDrain>() != null)
+            {
+                timeRemaining -= other.gameObject.GetComponent<TowelDrain>().drainSpeed;
+                other.gameObject.GetComponent<TowelDrain>().warning.enabled = true;
+            }
+        }
+
+        
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Towel")
+        {
+            other.gameObject.GetComponent<TowelDrain>().warning.enabled = false;
         }
     }
 
@@ -298,6 +345,8 @@ public class timerScript : MonoBehaviour
             StartCoroutine("YouDiedFadeIn");
         }
 
+        timeText.text = "0:00";
+
         GameObject player = this.gameObject;
         player.GetComponent<fishRandomMovement>().enabled = false;
         player.GetComponent<playerControl>().enabled = false;
@@ -337,6 +386,7 @@ public class timerScript : MonoBehaviour
 
     private IEnumerator TimeAddedTextDisplay()
     {
+        timeLostText.enabled = false;
         for (int i = 0; i < 1; i++)
         {
             timeAddedText.enabled = true;
@@ -344,6 +394,18 @@ public class timerScript : MonoBehaviour
             yield return new WaitForSeconds(addTextTime);
         }
         timeAddedText.enabled = false;
+    }
+
+    private IEnumerator TimeLossTextDisplay()
+    {
+        timeAddedText.enabled = false;
+        for (int i = 0; i < 1; i++)
+        {
+            timeLostText.enabled = true;
+
+            yield return new WaitForSeconds(addTextTime);
+        }
+        timeLostText.enabled = false;
     }
 
     private IEnumerator YouDiedFadeIn()

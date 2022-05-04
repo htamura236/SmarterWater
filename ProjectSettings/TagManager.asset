@@ -14,6 +14,9 @@ TagManager:
   - Trophy
   - ScoreScreen
   - sBottle
+  - Towel
+  - Candle
+  - TimeLoss
   layers:
   - Default
   - TransparentFX
