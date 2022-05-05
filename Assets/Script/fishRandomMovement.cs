@@ -67,10 +67,10 @@ public class fishRandomMovement : MonoBehaviour
        
 
         //Chooses XYZ randomly 
-        random_X_Movement = Random.Range(1f, 3f);
+        random_X_Movement = Random.Range(1f, 2f);
         JumpForce = Random.Range(2f, 5f);
-        jumpPressure = Random.Range(2f, 4f);
-        random_Z_Movement = Random.Range(1f, 3f);
+        jumpPressure = Random.Range(3f, 4f);
+        random_Z_Movement = Random.Range(1f, 2f);
 
         //time between each jump
         int jumpWait = 1/2;
@@ -107,7 +107,11 @@ public class fishRandomMovement : MonoBehaviour
 
             yield return new WaitForSeconds(jumpWait);
         }
-        if (randomDirection == 4)
+
+        // vvv Removed from random number generator, fish no longer jumps backwards
+
+
+       /* if (randomDirection == 4)
         {
             yield return new WaitForSeconds(jumpWait);
 
@@ -116,7 +120,11 @@ public class fishRandomMovement : MonoBehaviour
 
             yield return new WaitForSeconds(jumpWait);
         }
+        */
     }
+
+
+
 
 
     /*
