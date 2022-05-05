@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class playerControl : MonoBehaviour
 {
-    public bool inAir;
+    public bool isJumping;
     public bool lock_A_Key;
     public bool lock_D_Key;
     public float distanceGround;
     
+    public bool test;
 
     public float speed = 7.0f;
     private float translation;
@@ -18,7 +19,9 @@ public class playerControl : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        inAir = false;
+        isJumping = false;
+        
+        test = false;
         
 
         distanceGround = GetComponent<Collider>().bounds.extents.y;
@@ -32,34 +35,43 @@ public class playerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 move = Vector3.zero;
+        
 
 
         if (Input.GetButton("Jump"))
         {
-            inAir = false;
+            isJumping = false;
             lock_A_Key = false;
             lock_D_Key = false;
+
+            test = true;
+           
         }
         if (Input.GetButton("Jump") == false)
         {
-            inAir = true;
-            
+            test = false;
+            isJumping = true;
+            if (lock_A_Key == true || lock_D_Key == true)
+            {
+               lock_A_Key = false;
+               lock_D_Key = false;
+            }
         }
+        
 
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.W) && Input.GetButton("Jump"))
         {
             rb.AddForce(speed * transform.forward);
-            if (Input.GetKey(KeyCode.D) && inAir == true && lock_D_Key == false)
+            if (Input.GetKey(KeyCode.D) && isJumping == true && lock_D_Key == false   ||   Input.GetButton("Jump") && Input.GetKey(KeyCode.D) && isJumping == true && lock_D_Key == false )
             {
-                rb.AddForce(speed * transform.right);              
+                rb.AddForce((speed / 2) * transform.right);              
                 lock_A_Key = true;
                 
             }
-            if (Input.GetKey(KeyCode.A) && inAir == true && lock_A_Key == false)
+            if (Input.GetKey(KeyCode.A) && isJumping == true && lock_A_Key == false   ||   Input.GetButton("Jump") && Input.GetKey(KeyCode.A) && isJumping == true && lock_A_Key == false )
             {
-                rb.AddForce(speed * -transform.right);            
+                rb.AddForce((speed / 2) * -transform.right);            
                 lock_D_Key = true;
 
             }
@@ -76,6 +88,14 @@ public class playerControl : MonoBehaviour
             // turn on the cursor
             Cursor.lockState = CursorLockMode.None;
         }
+
+        if (isJumping == true && lock_A_Key == true)
+        {
+
+        }
+
+
+        
     }
 
     /*
