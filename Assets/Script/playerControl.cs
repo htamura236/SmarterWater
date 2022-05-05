@@ -10,7 +10,7 @@ public class playerControl : MonoBehaviour
     public float distanceGround;
     
 
-    public float speed = 10.0f;
+    public float speed = 7.0f;
     private float translation;
     private float straffe;
 
@@ -25,11 +25,16 @@ public class playerControl : MonoBehaviour
         // turn off the cursor
         Cursor.lockState = CursorLockMode.Locked;
 
+
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        Vector3 move = Vector3.zero;
+
+
         if (Input.GetButton("Jump"))
         {
             inAir = false;
@@ -45,20 +50,16 @@ public class playerControl : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            rb.AddForce(speed * transform.forward);
             if (Input.GetKey(KeyCode.D) && inAir == true && lock_D_Key == false)
             {
-               
-                straffe = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-                transform.Translate(straffe, 0, 0);
+                rb.AddForce(speed * transform.right);              
                 lock_A_Key = true;
                 
             }
             if (Input.GetKey(KeyCode.A) && inAir == true && lock_A_Key == false)
             {
-               
-                straffe = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-                transform.Translate(straffe, 0, 0);
+                rb.AddForce(speed * -transform.right);            
                 lock_D_Key = true;
 
             }
