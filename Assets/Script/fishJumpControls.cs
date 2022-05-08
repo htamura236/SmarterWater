@@ -77,6 +77,10 @@ public class fishJumpControls : MonoBehaviour
             //Disables WASD;
 
             GameObject.Find("Fish").GetComponent<playerControl>().enabled = false;
+
+            //Resets WASD controls
+            GameObject.Find("Fish").GetComponent<playerControl>().lock_D_Key = false;
+            GameObject.Find("Fish").GetComponent<playerControl>().lock_A_Key = false;
         }
         else
         {
