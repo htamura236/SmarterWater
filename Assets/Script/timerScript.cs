@@ -267,6 +267,13 @@ public class timerScript : MonoBehaviour
         {
             timeRemaining = 0.1f;
         }
+
+        if (other.gameObject.tag == "TutorialToilet")
+        {
+            GameObject.Find("Scene Manager").GetComponent<SceneSwitch>().LoadSceneRefresh(5);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 
     private void OnTriggerStay(Collider other)
