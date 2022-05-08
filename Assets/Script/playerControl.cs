@@ -48,17 +48,17 @@ public class playerControl : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.W) && Input.GetButton("Jump"))
         {
-            rb.AddForce(speed * transform.forward);
+            rb.AddForce((speed * transform.forward) * Time.deltaTime);
             if (Input.GetKey(KeyCode.D) && onGround == false && lock_D_Key == false   ||   Input.GetButton("Jump") && Input.GetKey(KeyCode.D) && onGround == false && lock_D_Key == false )
             {
-                rb.AddForce((speed / 2) * transform.right);              
+                rb.AddForce(((speed / 2) * transform.right) * Time.deltaTime);              
                 lock_A_Key = true;
     
 
             }
             if (Input.GetKey(KeyCode.A) && onGround == false && lock_A_Key == false   ||   Input.GetButton("Jump") && Input.GetKey(KeyCode.A) && onGround == false && lock_A_Key == false )
             {
-                rb.AddForce((speed / 2) * -transform.right);            
+                rb.AddForce(((speed / 2) * -transform.right) * Time.deltaTime);            
                 lock_D_Key = true;
 
                

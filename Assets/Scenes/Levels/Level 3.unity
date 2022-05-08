@@ -36064,6 +36064,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5714345801576970996, guid: 7ea21d7492524d34a87ce13c9f45df95, type: 3}
+      propertyPath: speed
+      value: 2600
+      objectReference: {fileID: 0}
     - target: {fileID: 5714345801576970997, guid: 7ea21d7492524d34a87ce13c9f45df95, type: 3}
       propertyPath: timeText
       value: 
