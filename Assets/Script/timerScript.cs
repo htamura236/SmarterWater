@@ -72,8 +72,14 @@ public class timerScript : MonoBehaviour
 
     void Awake()
     {
-        timeAddedText.enabled = false;
-        timeLostText.enabled = false;
+        if(timeAddedText != null)
+        {
+            timeAddedText.enabled = false;
+        }
+        if(timeLostText != null)
+        {
+            timeLostText.enabled = false;
+        }
 
         //you died alpha setting
 
