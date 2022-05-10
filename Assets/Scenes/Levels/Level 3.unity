@@ -4056,7 +4056,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5933862649229332670, guid: 573a9bfada461ba4d9b10d0ba0110c71, type: 3}
       propertyPath: zRotation
-      value: 4
+      value: 0.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 573a9bfada461ba4d9b10d0ba0110c71, type: 3}
@@ -25164,7 +25164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5933862649229332670, guid: 573a9bfada461ba4d9b10d0ba0110c71, type: 3}
       propertyPath: zRotation
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 573a9bfada461ba4d9b10d0ba0110c71, type: 3}
@@ -30393,7 +30393,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5933862649229332670, guid: 573a9bfada461ba4d9b10d0ba0110c71, type: 3}
       propertyPath: zRotation
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 573a9bfada461ba4d9b10d0ba0110c71, type: 3}
