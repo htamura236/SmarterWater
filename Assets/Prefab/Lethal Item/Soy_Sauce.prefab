@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 4064496023150795456}
   - component: {fileID: 7490016320179160647}
   - component: {fileID: 15353750441181357}
-  - component: {fileID: 2489129279162234029}
   - component: {fileID: 2888390666588735317}
   - component: {fileID: 9019736344274469182}
   - component: {fileID: 1946472809}
   - component: {fileID: 1946472810}
+  - component: {fileID: 4764262189453385425}
   m_Layer: 0
   m_Name: Soy_Sauce
   m_TagString: TimeLoss
@@ -87,19 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2489129279162234029
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3769354558889541752}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.012667999, y: 0.030188188, z: 0.013319923}
-  m_Center: {x: -0.0005899081, y: 0.015094079, z: -6.9849193e-10}
 --- !u!65 &2888390666588735317
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -111,7 +98,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.010400282, y: 0.02658816, z: 0.009629846}
+  m_Size: {x: -0.005, y: 0.02, z: 0.005}
   m_Center: {x: -0.00067110546, y: 0.015105945, z: -0.000059663795}
 --- !u!54 &9019736344274469182
 Rigidbody:
@@ -157,6 +144,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   secondsAdded: 20
+--- !u!64 &4764262189453385425
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3769354558889541752}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7331106387501929030, guid: 52fc0d8d1a4d69f4c9159ab8b1116340, type: 3}
 --- !u!1 &4123255165576207687
 GameObject:
   m_ObjectHideFlags: 0
