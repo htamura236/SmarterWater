@@ -67,16 +67,7 @@ public class playerControl : MonoBehaviour
         
 
 
-            if (Input.GetKeyDown("escape"))
-        {
-            // turn on the cursor
-            Cursor.lockState = CursorLockMode.None;
-        }
 
-        if (onGround == true && lock_A_Key == true)
-        {
-
-        }
 
 
         

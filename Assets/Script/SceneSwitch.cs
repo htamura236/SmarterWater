@@ -104,6 +104,8 @@ public class SceneSwitch : MonoBehaviour
                         Cursor.lockState = CursorLockMode.Locked;
                         locked = false;
                         player.GetComponent<BoxCollider>().enabled = true;
+                        player.GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
+
 
                         if (timerGoing)
                         {
