@@ -664,7 +664,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2479670740965890805, guid: 2aeae77bc7ca06343adb4b2df3108ea0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.94
+      value: -13.04
       objectReference: {fileID: 0}
     - target: {fileID: 2479670740965890805, guid: 2aeae77bc7ca06343adb4b2df3108ea0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -672,7 +672,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2479670740965890805, guid: 2aeae77bc7ca06343adb4b2df3108ea0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -100.3
+      value: -102.17
       objectReference: {fileID: 0}
     - target: {fileID: 2479670740965890805, guid: 2aeae77bc7ca06343adb4b2df3108ea0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2399,6 +2399,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 763393787}
     m_Modifications:
+    - target: {fileID: 548800000, guid: e8e8d15a09eaa0e41ae12469853b9263, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.2743988
+      objectReference: {fileID: 0}
     - target: {fileID: 2737173805072073245, guid: e8e8d15a09eaa0e41ae12469853b9263, type: 3}
       propertyPath: m_Name
       value: Towel2 (3)
@@ -2974,6 +2978,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 763393787}
     m_Modifications:
+    - target: {fileID: 548800000, guid: e8e8d15a09eaa0e41ae12469853b9263, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.2743988
+      objectReference: {fileID: 0}
     - target: {fileID: 2737173805072073245, guid: e8e8d15a09eaa0e41ae12469853b9263, type: 3}
       propertyPath: m_Name
       value: Towel2
@@ -5456,6 +5464,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 763393787}
     m_Modifications:
+    - target: {fileID: 548800000, guid: e8e8d15a09eaa0e41ae12469853b9263, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.2743988
+      objectReference: {fileID: 0}
     - target: {fileID: 2737173805072073245, guid: e8e8d15a09eaa0e41ae12469853b9263, type: 3}
       propertyPath: m_Name
       value: Towel2 (4)
@@ -6327,6 +6339,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 763393787}
     m_Modifications:
+    - target: {fileID: 548800000, guid: e8e8d15a09eaa0e41ae12469853b9263, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.2743988
+      objectReference: {fileID: 0}
     - target: {fileID: 2737173805072073245, guid: e8e8d15a09eaa0e41ae12469853b9263, type: 3}
       propertyPath: m_Name
       value: Towel2 (1)
@@ -6474,7 +6490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4720948453961548657, guid: 13b9b4ad07de73949842eecaa58a1533, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.090275
+      value: 18.990273
       objectReference: {fileID: 0}
     - target: {fileID: 4720948453961548657, guid: 13b9b4ad07de73949842eecaa58a1533, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6482,7 +6498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4720948453961548657, guid: 13b9b4ad07de73949842eecaa58a1533, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.315567
+      value: 11.445572
       objectReference: {fileID: 0}
     - target: {fileID: 4720948453961548657, guid: 13b9b4ad07de73949842eecaa58a1533, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10169,6 +10185,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 763393787}
     m_Modifications:
+    - target: {fileID: 548800000, guid: e8e8d15a09eaa0e41ae12469853b9263, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.2743988
+      objectReference: {fileID: 0}
     - target: {fileID: 2737173805072073245, guid: e8e8d15a09eaa0e41ae12469853b9263, type: 3}
       propertyPath: m_Name
       value: Towel2 (2)
@@ -11728,7 +11748,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3103374620982314968, guid: 6fc6cdbdb4c559e40aa36deddd9f93cb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.65
+      value: -11.75
       objectReference: {fileID: 0}
     - target: {fileID: 3103374620982314968, guid: 6fc6cdbdb4c559e40aa36deddd9f93cb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11736,7 +11756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3103374620982314968, guid: 6fc6cdbdb4c559e40aa36deddd9f93cb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -98.73
+      value: -100.6
       objectReference: {fileID: 0}
     - target: {fileID: 3103374620982314968, guid: 6fc6cdbdb4c559e40aa36deddd9f93cb, type: 3}
       propertyPath: m_LocalRotation.w
